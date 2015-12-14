@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<webmd_rendition>
+  <content>
+<wbmd_asset xmlns:xalan="http://xml.apache.org/xalan" xmlns:fn="http://www.w3.org/2005/02/xpath-functions" object_type="wbmd_pb_module" id="091e9c5e81314816">
+    <webmd_module>
+        <module_settings>
+            <chronic_id>091e9c5e80f046b5</chronic_id>
+            <r_object_id>091e9c5e81314816</r_object_id>
+            <title>ed-sptlghtcrsl-hp</title>
+            <object_name>module_ed-sptlghtcrsl-hp_091e9c5e80f046b5.xml</object_name>
+            <object_type>wbmd_pb_module</object_type>
+            <wbmd_pb_module_category />
+            <wbmd_pb_dyn_module_category />
+            <md_pb_module_label1_group>
+                <wbmd_pb_module_label1 />
+            </md_pb_module_label1_group>
+            <md_pb_module_label2_group>
+                <wbmd_pb_module_label2 object_type="wbmd_lookup" wbmd_lookup_type="wbmd_module_label2" i_chronicle_id="091e9c5e81122956" wbmd_disp_nm="Thumbs" wbmd_storage_val="thumbs" />
+            </md_pb_module_label2_group>
+            <wbmd_pb_module_sp_program />
+            <wbmd_pb_module_tier>0</wbmd_pb_module_tier>
+            <wbmd_pb_cache_duration>1440</wbmd_pb_cache_duration>
+            <r_modify_date>12/09/2015 12:16:16</r_modify_date>
+            <wbmd_c_channel_ids_group />
+            <wbmd_program_group />
+            <wbmd_pb_asset_css path="/webmd/PageBuilder_Assets/CSS/EditorialModule/Harmony Carousel Spotlight/Default_091e9c5e80f2fc2e.css" object_type="wbmd_pb_css" chronic_id="091e9c5e80f2fc2e" />
+            <wbmd_pb_module_xsl path="/webmd/PageBuilder_Assets/XSL/EditorialModule/Harmony Carousel Spotlight_091e9c5e80f2fc2d.xsl" object_type="wbmd_pb_xsl" chronic_id="091e9c5e80f2fc2d" />
+            <wbmd_pb_moduledataschema path="/webmd_uk/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
+            <wbmd_pb_moduledataschema path="/webmd/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
+            <wbmd_pb_owner_page_id path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Homepage 2014_091e9c5e80eff7b3/page_Homepage 2014_091e9c5e80eff7b3.xml" object_type="wbmd_pb_page" chronic_id="091e9c5e80eff7b3" />
+            <dnn_id>0</dnn_id>
+            <class>EditorialModule</class>
+        </module_settings>
+        <module_data>
+            <module_title />
+            <module_link_view>Page Refresh(Default)</module_link_view>
+            <module_link chronic_id="" directive="friendlyurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" />
+            <links>
+                <link_bullet>false</link_bullet>
+                <link>
+                    <link_text>[video]Plastics Linked to Serious Illnesses -- What Can You Do?</link_text>
+                    <action_text>Michael Smith, MD | WebMD Chief Medical Editor</action_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_url chronic_id="091e9c5e812fabd0" directive="friendlyurl" object_type="wbmd_cons_video" wbmd_lookup_type="" wbmd_storage_value="" />
+                    <link_source_icon chronic_id="091e9c5e811f9fe7" directive="imageurl" object_type="wbmd_cons_img" wbmd_lookup_type="" wbmd_storage_value="" path="/webmd/consumer_assets/site_images/article_thumbnails/news/2015/06_2015/bpa_behavioral_problems/493x335_bpa_behavioral_problems.jpg" alt="stacked plastic bottles" />
+                </link>
+                <link>
+                    <link_text>[video]Bubonic Plague Is Still Around, but How Big Is the Threat?</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_url chronic_id="091e9c5e812f368c" directive="friendlyurl" object_type="wbmd_cons_video" wbmd_lookup_type="" wbmd_storage_value="" />
+                    <link_source_icon chronic_id="091e9c5e812f3986" directive="imageurl" object_type="wbmd_cons_img" wbmd_lookup_type="" wbmd_storage_value="" path="/webmd/consumer_assets/site_images/article_thumbnails/video/michael_smith_situation_room_dark_purple_video/493x335_michael_smith_situation_room_dark_purple_video.jpg" alt="ALT TAG" />
+                </link>
+                <link>
+                    <link_text>[video]Butter Is Not OK, Contrary to Recent News</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_url chronic_id="091e9c5e812fc7f8" directive="friendlyurl" object_type="wbmd_cons_video" wbmd_lookup_type="" wbmd_storage_value="" />
+                    <link_source_icon chronic_id="091e9c5e80c1e8c9" directive="imageurl" object_type="wbmd_cons_img" wbmd_lookup_type="" wbmd_storage_value="" path="/webmd/consumer_assets/site_images/article_thumbnails/news/2013/02_2013/which_fats_healthy_faq/493x335_which_fats_healthy_faq.jpg" alt="butter melting in pan" />
+                </link>
+            </links>
+            <descriptions>
+                <description>
+                    <description_text>[Mobile Label]Michael Smith, MD | WebMD Chief Medical Editor</description_text>
+                </description>
+            </descriptions>
+            <body_images />
+        </module_data>
+    </webmd_module>
+</wbmd_asset>
+</content>
+  <friendlyurls />
+  <referenced_objects>
+    <object chronic_id="091e9c5e812fabd0" thmbnl="/webmd/consumer_assets/site_images/article_thumbnails/video/michael_smith_situation_room_dark_purple_video/48x48_michael_smith_situation_room_dark_purple_video.jpg" wbmd_c_width="48" wbmd_c_ht="48" pointer="0" path="/webmd/consumer_assets/videos/2015/plastics-and-hormones.wxml">
+      <target siteid="3" name="" prefix="www" friendlyurl="/a-to-z-guides/video/plastics-and-hormones" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/a-to-z-guides/video/plastics-and-hormones" />
+    </object>
+    <object chronic_id="091e9c5e812f368c" thmbnl="/webmd/consumer_assets/site_images/article_thumbnails/video/michael_smith_situation_room_dark_purple_video/48x48_michael_smith_situation_room_dark_purple_video.jpg" wbmd_c_width="48" wbmd_c_ht="48" pointer="0" path="/webmd/consumer_assets/videos/2015/bubonic-plague.wxml">
+      <target siteid="3" name="" prefix="www" friendlyurl="/a-to-z-guides/video/bubonic-plague" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/a-to-z-guides/video/bubonic-plague" />
+    </object>
+    <object chronic_id="091e9c5e812fc7f8" thmbnl="/webmd/consumer_assets/site_images/article_thumbnails/video/michael_smith_situation_room_light_purple_video/48x48_michael_smith_situation_room_light_purple_video.jpg" wbmd_c_width="48" wbmd_c_ht="48" pointer="0" path="/webmd/consumer_assets/videos/2015/saturated-fats.wxml">
+      <target siteid="3" name="" prefix="www" friendlyurl="/heart-disease/video/saturated-fats" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/heart-disease/video/saturated-fats" />
+    </object>
+  </referenced_objects>
+  <container_hierarchy />
+  <expanded_objects />
+</webmd_rendition>

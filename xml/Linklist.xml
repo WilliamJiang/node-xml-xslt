@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<webmd_rendition>
+  <content>
+<wbmd_asset xmlns:xalan="http://xml.apache.org/xalan" xmlns:fn="http://www.w3.org/2005/02/xpath-functions" object_type="wbmd_pb_module" id="091e9c5e8124b5af">
+    <webmd_module>
+        <module_settings>
+            <chronic_id>091e9c5e80f08908</chronic_id>
+            <r_object_id>091e9c5e8124b5af</r_object_id>
+            <title>hc-hp</title>
+            <object_name>module_hc-hp_091e9c5e80f08908.xml</object_name>
+            <object_type>wbmd_pb_module</object_type>
+            <wbmd_pb_module_category />
+            <wbmd_pb_module_subcategory />
+            <wbmd_pb_dyn_module_category />
+            <md_pb_module_label1_group>
+                <wbmd_pb_module_label1 />
+            </md_pb_module_label1_group>
+            <md_pb_module_label2_group>
+                <wbmd_pb_module_label2 />
+            </md_pb_module_label2_group>
+            <wbmd_pb_module_sp_program />
+            <wbmd_pb_module_tier>0</wbmd_pb_module_tier>
+            <wbmd_pb_cache_duration>1440</wbmd_pb_cache_duration>
+            <r_modify_date>08/10/2015 17:00:00</r_modify_date>
+            <wbmd_c_channel_ids_group />
+            <wbmd_pb_asset_css path="/webmd/PageBuilder_Assets/CSS/091e9c5e8000511f/Health Conditions/Default_091e9c5e80f2a114.css" object_type="wbmd_pb_css" chronic_id="091e9c5e80f2a114" />
+            <wbmd_pb_module_xsl path="/webmd/PageBuilder_Assets/XSL/LinkList/Health Conditions_091e9c5e80f1ddd9.xsl" object_type="wbmd_pb_xsl" chronic_id="091e9c5e80f1ddd9" />
+            <wbmd_pb_moduledataschema path="/webmd/PageBuilder_Assets/schemas/module_schemas/LinksListModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e8000511f" />
+            <wbmd_pb_moduledataschema path="/webmd_uk/PageBuilder_Assets/schemas/module_schemas/LinksListModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e8000511f" />
+            <wbmd_pb_owner_page_id path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Homepage 2014_091e9c5e80eff7b3/page_Homepage 2014_091e9c5e80eff7b3.xml" object_type="wbmd_pb_page" chronic_id="091e9c5e80eff7b3" />
+            <dnn_id>0</dnn_id>
+            <class>LinkList</class>
+        </module_settings>
+        <module_data>
+            <module_title>Health A - Z</module_title>
+            <module_link_view>Page Refresh(Default)</module_link_view>
+            <bullets>Off</bullets>
+            <module_link chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+            <links>
+                <link>
+                    <link_text>ADHD</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022ac6" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <eds_additional_information>
+                        <property name="eds_provider_id" value="" />
+                        <property name="eds_client_reference_id" value="" />
+                        <property name="eds_client_reference_name" value="" />
+                    </eds_additional_information>
+                    <link_source_icon chronic_id="" directive="imageurl" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Allergies</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022f86" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Alzheimer's</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022e7f" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Anxiety Disorders</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8003c115" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Arthritis</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80034dea" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Asthma</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8003517a" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Back Pain</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022fa8" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Cancer</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80024a11" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Cholesterol</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022f64" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Cold, Flu, &amp; Cough</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80022f49" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>COPD</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8036cc2f" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Depression</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80732fb0" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Diabetes</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80010f55" directive="friendlyurl" object_type="wbmd_cons_article" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Digestive Disorders</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800252cc" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Eye Health</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800302ce" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Heart Health</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80027294" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Heartburn/GERD</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8003a793" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Hypertension</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800232f5" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Mental Health</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800249f0" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Migraines</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8002394a" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Multiple Sclerosis</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8002479f" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Oral Care</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80026699" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Osteoporosis</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8002487a" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Psoriasis</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800af806" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Rheumatoid Arthritis</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e8002487c" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Sexual Conditions</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80024a6d" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Skin Problems</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e80034d7a" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+                <link>
+                    <link_text>Sleep Disorders</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_link chronic_id="091e9c5e800251e7" directive="friendlyurl" object_type="wbmd_pb_page" />
+                    <link_source_icon chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                </link>
+            </links>
+            <button>
+                <button_link_view>Page Refresh(Default)</button_link_view>
+                <button_link />
+            </button>
+        </module_data>
+    </webmd_module>
+</wbmd_asset>
+</content>
+  <friendlyurls />
+  <referenced_objects>
+    <object chronic_id="091e9c5e80022ac6" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/ADD ADHD Health Center/page_ADD ADHD Health Center_091e9c5e80022ac6.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/add-adhd/default.htm" umtchronicleid="091e9c5e8117fc17" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/add-adhd-toc" umtchronicleid="091e9c5e8117fc17" />
+    </object>
+    <object chronic_id="091e9c5e80022f86" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Allergies Health Center/page_Allergies Health Center_091e9c5e80022f86.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/allergies/default.htm" umtchronicleid="091e9c5e80686cc0" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/allergies/default.htm" umtchronicleid="091e9c5e80686cc0" />
+    </object>
+    <object chronic_id="091e9c5e80022e7f" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Alzheimers Health Center/page_Alzheimers Health Center_091e9c5e80022e7f.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/alzheimers/default.htm" umtchronicleid="091e9c5e8117fce7" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/alzheimers-toc" umtchronicleid="091e9c5e8117fce7" />
+    </object>
+    <object chronic_id="091e9c5e8003c115" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Anxiety and Panic Disorders Health Center TOC/page_Anxiety and Panic Disorders Health Center_091e9c5e8003c115.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/anxiety-panic/default.htm" umtchronicleid="091e9c5e8117fd46" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/anxiety-panic-toc" umtchronicleid="091e9c5e8117fd46" />
+    </object>
+    <object chronic_id="091e9c5e80034dea" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Arthritis Super Center/page_Arthritis Super Center_091e9c5e80034dea.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/arthritis/default.htm" umtchronicleid="091e9c5e8117fdc0" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/arthritis-toc" umtchronicleid="091e9c5e8117fdc0" />
+    </object>
+    <object chronic_id="091e9c5e8003517a" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Asthma Health Center/page_Asthma Health Center_091e9c5e8003517a.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/asthma/default.htm" umtchronicleid="091e9c5e8117fdc6" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/asthma-toc" umtchronicleid="091e9c5e8117fdc6" />
+    </object>
+    <object chronic_id="091e9c5e80022fa8" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Back Pain Health Center/page_Back Pain Health Center_091e9c5e80022fa8.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/back-pain/default.htm" umtchronicleid="091e9c5e8068fb85" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/back-pain/default.htm" umtchronicleid="091e9c5e8068fb85" />
+    </object>
+    <object chronic_id="091e9c5e80024a11" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Cancer Super Center/page_Cancer Super Center_091e9c5e80024a11.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/cancer/default.htm" umtchronicleid="091e9c5e81182543" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/cancer-toc" umtchronicleid="091e9c5e81182543" />
+    </object>
+    <object chronic_id="091e9c5e80022f64" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Cholesterol Health Center/page_Cholesterol Health Center_091e9c5e80022f64.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/cholesterol-management/default.htm" umtchronicleid="091e9c5e81183b68" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/cholesterol-management-toc" umtchronicleid="091e9c5e81183b68" />
+    </object>
+    <object chronic_id="091e9c5e80022f49" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Cold and Flu/page_Cold and Flu Health Center_091e9c5e80022f49.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/cold-and-flu/default.htm" umtchronicleid="091e9c5e8068ab56" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/cold-and-flu/default.htm" umtchronicleid="091e9c5e8068ab56" />
+    </object>
+    <object chronic_id="091e9c5e8036cc2f" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/COPD Health Center_091e9c5e8036cc2f/page_COPD Health Center_091e9c5e8036cc2f.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/lung/copd/default.htm" umtchronicleid="091e9c5e811827fa" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/copd-toc" umtchronicleid="091e9c5e811827fa" />
+    </object>
+    <object chronic_id="091e9c5e80732fb0" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Depression Health Center_091e9c5e80732fb0/page_Depression Health Center_091e9c5e80732fb0.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/depression/default.htm" umtchronicleid="091e9c5e806934ca" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/depression/default.htm" umtchronicleid="091e9c5e806934ca" />
+    </object>
+    <object chronic_id="091e9c5e80010f55" thmbnl="" pointer="0" path="/webmd/consumer_assets/editorial/articles/health_and_medical_reference/diabetes/type_2_diabetes/overview_types_of/_type_2_diabetes.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/diabetes/type-2-diabetes-guide/type-2-diabetes" />
+      <target siteid="8" name="WebMD_Mobile" prefix="www" friendlyurl="/diabetes/type-2-diabetes" />
+    </object>
+    <object chronic_id="091e9c5e800252cc" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Digestive Disorders Health Center/page_Digestive Disorders Health Center_091e9c5e800252cc.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/digestive-disorders/default.htm" umtchronicleid="091e9c5e81182d97" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/digestive-disorders-toc" umtchronicleid="091e9c5e81182d97" />
+    </object>
+    <object chronic_id="091e9c5e800302ce" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Eye Health Center/page_Eye Health Topic Centers_091e9c5e800302ce.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/eye-health/default.htm" umtchronicleid="091e9c5e806866a2" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/eye-health/default.htm" umtchronicleid="091e9c5e806866a2" />
+    </object>
+    <object chronic_id="091e9c5e80027294" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Heart Health Super Center/page_Heart Health Super Center_091e9c5e80027294.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/heart/default.htm" umtchronicleid="091e9c5e81182f6c" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/heart-toc" umtchronicleid="091e9c5e81182f6c" />
+    </object>
+    <object chronic_id="091e9c5e8003a793" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Heartburn GERD Health Center TOC/page_Heartburn GERD Health Center_091e9c5e8003a793.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/heartburn-gerd/default.htm" umtchronicleid="091e9c5e8068abb4" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/heartburn-gerd/default.htm" umtchronicleid="091e9c5e8068abb4" />
+    </object>
+    <object chronic_id="091e9c5e800232f5" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Hypertension Health Center/page_Hypertension Health Center_091e9c5e800232f5.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/hypertension-high-blood-pressure/default.htm" umtchronicleid="091e9c5e81182813" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/hypertension-high-blood-pressure-toc" umtchronicleid="091e9c5e81182813" />
+    </object>
+    <object chronic_id="091e9c5e800249f0" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Mental Health Super Center/page_Mental Health Super Center_091e9c5e800249f0.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/mental-health/default.htm" umtchronicleid="091e9c5e8118307c" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/mental-health-toc" umtchronicleid="091e9c5e8118307c" />
+    </object>
+    <object chronic_id="091e9c5e8002394a" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/MigrainesHeadaches Health Center/page_Migraines and Headaches Health Center_091e9c5e8002394a.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/migraines-headaches/default.htm" umtchronicleid="091e9c5e806883e9" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/migraines-headaches/default.htm" umtchronicleid="091e9c5e806883e9" />
+    </object>
+    <object chronic_id="091e9c5e8002479f" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Multiple Sclerosis Health Center/page_Multiple Sclerosis Health Center_091e9c5e8002479f.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/multiple-sclerosis/default.htm" umtchronicleid="091e9c5e80688954" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/multiple-sclerosis/default.htm" umtchronicleid="091e9c5e80688954" />
+    </object>
+    <object chronic_id="091e9c5e80026699" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Oral Health Center/page_Oral Health Center_091e9c5e80026699.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/oral-health/default.htm" umtchronicleid="091e9c5e806855b2" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/oral-health/default.htm" umtchronicleid="091e9c5e806855b2" />
+    </object>
+    <object chronic_id="091e9c5e8002487a" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Osteoporosis Health Center/page_Osteoporosis Health Center_091e9c5e8002487a.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/osteoporosis/default.htm" umtchronicleid="091e9c5e81183b6e" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/osteoporosis-toc" umtchronicleid="091e9c5e81183b6e" />
+    </object>
+    <object chronic_id="091e9c5e800af806" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Psoriasis Health Center/page_Psoriasis Health Center_091e9c5e800af806.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/skin-problems-and-treatments/psoriasis/default.htm" umtchronicleid="091e9c5e80c08fba" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/psoriasis/default.htm" umtchronicleid="091e9c5e80c08fba" />
+    </object>
+    <object chronic_id="091e9c5e8002487c" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Rheumatoid Arthritis Health Center/page_Rheumatoid Arthritis Health Center_091e9c5e8002487c.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/rheumatoid-arthritis/default.htm" umtchronicleid="091e9c5e81182e49" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/rheumatoid-arthritis-toc" umtchronicleid="091e9c5e81182e49" />
+    </object>
+    <object chronic_id="091e9c5e80024a6d" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Sexual Conditions Health Center/page_Sexual Conditions Health Center_091e9c5e80024a6d.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/sexual-conditions/default.htm" umtchronicleid="091e9c5e8068fbf6" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/sexual-conditions/default.htm" umtchronicleid="091e9c5e8068fbf6" />
+    </object>
+    <object chronic_id="091e9c5e80034d7a" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Skin Problems and Treatments TOC Page/page_Skin Problems and Treatments Health Center_091e9c5e80034d7a.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/skin-problems-and-treatments/default.htm" umtchronicleid="091e9c5e80693c26" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/skin-problems-and-treatments/default.htm" umtchronicleid="091e9c5e80693c26" />
+    </object>
+    <object chronic_id="091e9c5e800251e7" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Sleep Disorders Health Center/page_Sleep Disorders Health Center_091e9c5e800251e7.wxml">
+      <target siteid="3" name="WebMD" prefix="www" friendlyurl="/sleep-disorders/default.htm" umtchronicleid="091e9c5e80693f33" />
+      <target siteid="8" name="" prefix="www" friendlyurl="/sleep-disorders/default.htm" umtchronicleid="091e9c5e80693f33" />
+    </object>
+  </referenced_objects>
+  <container_hierarchy />
+  <expanded_objects />
+</webmd_rendition>

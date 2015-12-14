@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<webmd_rendition>
+  <content>
+<wbmd_asset xmlns:xalan="http://xml.apache.org/xalan" xmlns:fn="http://www.w3.org/2005/02/xpath-functions" object_type="wbmd_pb_module" id="091e9c5e813166b3">
+    <webmd_module>
+        <module_settings>
+            <chronic_id>091e9c5e80f4bedb</chronic_id>
+            <r_object_id>091e9c5e813166b3</r_object_id>
+            <title>ed-convblog-hp</title>
+            <object_name>module_conversations-blog-editorial_091e9c5e80f4bedb.xml</object_name>
+            <object_type>wbmd_pb_module</object_type>
+            <wbmd_pb_module_category />
+            <wbmd_pb_dyn_module_category />
+            <md_pb_module_label1_group>
+                <wbmd_pb_module_label1 />
+            </md_pb_module_label1_group>
+            <md_pb_module_label2_group>
+                <wbmd_pb_module_label2 />
+            </md_pb_module_label2_group>
+            <wbmd_pb_module_sp_program />
+            <wbmd_pb_module_tier>0</wbmd_pb_module_tier>
+            <wbmd_pb_cache_duration>1440</wbmd_pb_cache_duration>
+            <r_modify_date>12/10/2015 16:05:22</r_modify_date>
+            <wbmd_c_channel_ids_group />
+            <wbmd_program_group />
+            <wbmd_pb_asset_css path="/webmd/PageBuilder_Assets/CSS/EditorialModule/Conversations Blog/Default_091e9c5e80f4ce8d.css" object_type="wbmd_pb_css" chronic_id="091e9c5e80f4ce8d" />
+            <wbmd_pb_module_xsl path="/webmd/PageBuilder_Assets/XSL/EditorialModule/conversations-blog_091e9c5e80f4ce8c.xsl" object_type="wbmd_pb_xsl" chronic_id="091e9c5e80f4ce8c" />
+            <wbmd_pb_moduledataschema path="/webmd_uk/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
+            <wbmd_pb_moduledataschema path="/webmd/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
+            <wbmd_pb_owner_page_id path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Homepage 2014_091e9c5e80eff7b3/page_Homepage 2014_091e9c5e80eff7b3.xml" object_type="wbmd_pb_page" chronic_id="091e9c5e80eff7b3" />
+            <dnn_id>0</dnn_id>
+            <class>EditorialModule</class>
+        </module_settings>
+        <module_data>
+            <module_title>Second Opinion | WebMD Expert Perspectives</module_title>
+            <module_link_view>Page Refresh(Default)</module_link_view>
+            <module_link chronic_id="" directive="friendlyurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" />
+            <links>
+                <link_bullet>false</link_bullet>
+                <link>
+                    <link_text>Is 'Seeding' After C-Section Safe?</link_text>
+                    <link_link_view>Page Refresh(Default)</link_link_view>
+                    <link_url chronic_id="091e9c5e81315af3" directive="friendlyurl" object_type="wbmd_cons_ptr" wbmd_lookup_type="" wbmd_storage_value="" />
+                    <link_source_icon chronic_id="091e9c5e812f110f" directive="imageurl" object_type="wbmd_cons_img" wbmd_lookup_type="" wbmd_storage_value="" path="/webmd/consumer_assets/site_images/article_thumbnails/other/newborn_alt1_other/650x350_newborn_alt1_other.jpg" alt="new mom and baby" />
+                </link>
+            </links>
+            <descriptions>
+                <description>
+                    <description_text>Natural childbirth advocates say babies born by C-section can benefit from "seeding." Our women's health expert explains the practice and has some words of caution.</description_text>
+                </description>
+                <description>
+                    <description_text>Heather Rupe, DO | Women's Health</description_text>
+                </description>
+                <description>
+                    <description_text>http://blogs.webmd.com/womens-health/</description_text>
+                </description>
+                <description>
+                    <description_text>[Mobile Label]Heather Rupe, DO | Women's Health</description_text>
+                </description>
+            </descriptions>
+            <body_images>
+                <body_image>
+                    <override_text />
+                    <image_link_view>Page Refresh(Default)</image_link_view>
+                    <alignment>left</alignment>
+                    <source chronic_id="" directive="imageurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" path="" alt="" />
+                    <image_link chronic_id="" directive="friendlyurl" object_type="" wbmd_lookup_type="" wbmd_storage_value="" />
+                </body_image>
+            </body_images>
+        </module_data>
+    </webmd_module>
+</wbmd_asset>
+</content>
+  <friendlyurls />
+  <referenced_objects>
+    <object chronic_id="091e9c5e81315af3" thmbnl="" pointer="1">
+      <target friendlyurl="http://blogs.webmd.com/womens-health/2015/11/is-seeding-after-c-section-safe.html" />
+    </object>
+  </referenced_objects>
+  <container_hierarchy />
+  <expanded_objects />
+</webmd_rendition>
