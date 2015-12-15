@@ -5,13 +5,16 @@
 http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80eff7b3
 
 1. Editorial Module : http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f046b5
-XSL for editorial module: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/EditorialModule/Harmony%20Carousel%20Spotlight_091e9c5e80f2fc2d.xsl
+XSL for editorial module:
+http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/EditorialModule/Harmony%20Carousel%20Spotlight_091e9c5e80f2fc2d.xsl
 
 1. Editorial Module 2: http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f4bedb
-Xsl for editorial module: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging//webmd/PageBuilder_Assets/XSL/EditorialModule/conversations-blog_091e9c5e80f4ce8c.xsl
+Xsl for editorial module:
+http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/EditorialModule/conversations-blog_091e9c5e80f4ce8c.xsl
 
 1. Linklist Module: http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f08908
-XSL for link list: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/LinkList/Health%20Conditions_091e9c5e80f1ddd9.xsl
+XSL for link list:
+http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/LinkList/Health%20Conditions_091e9c5e80f1ddd9.xsl
 
 
 ### Requirements:
@@ -52,6 +55,12 @@ cd libxslt-1.1.28
 make
 make install
 ```
+
+need JDK
+java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) 64-Bit Server VM (build 25.65-b01, mixed mode)
+
 
 ### Issues:
 

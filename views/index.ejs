@@ -24,13 +24,22 @@
     <meta property="article:author" content="https://www.facebook.com/WebMD"/>
     <meta property="article:publisher" content="https://www.facebook.com/WebMD"/>
 
-    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel='stylesheet' href='/css/style.css'/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 </head>
 <body>
-<h1><%= title %></h1>
-
-<p>Welcome to <%= title %></p>
-
+<div class="masthead-nav-shell">
+    <div class="masthead-sitelogo-shell" data-metrics-module="">
+        <a href="http://www.webmd.com"
+           class="masthead-sitelogo-link"
+           data-metrics-link="logo"><img
+                    src="img/logo-webmd-site.png"
+                    class="navigation-globalnav-logo" alt="WebMD: Better information. Better health."
+                    title="WebMD: Better information. Better health.">
+        </a>
+    </div>
+</div>
 <section id="s1" class="section">
     <div id="ContentPane1" class="pane"></div>
     <div id="ContentPane2" class="pane"></div>
@@ -48,7 +57,7 @@
     <section id="s2" class="section">
         <div id="ContentPane10" class="pane"></div>
         <div id="ContentPane11" class="pane"></div>
-        <div id="ContentPane12" class="pane"></div>
+        <div id="ContentPane12" class="pane"><%- linklist %></div>
         <div id="ContentPane13" class="pane"></div>
         <div id="ContentPane14" class="pane"></div>
         <div id="ContentPane15" class="pane"></div>
@@ -128,5 +137,6 @@
     <div id="ContentPane71" class="pane"></div>
     <div id="ContentPane72" class="pane"></div>
 </section>
+
 </body>
 </html>

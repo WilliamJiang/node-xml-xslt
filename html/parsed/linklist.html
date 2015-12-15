@@ -1,0 +1,52 @@
+<div class="healthConditions module" id="" data-metrics-module="">
+    <div class="module-header clearfix">
+        <h2>Health A - Z</h2>
+        <form action="http://www.webmd.com/search/search_results/default.aspx" method="get" name="health-conditions-search-form" id="health-conditions-search-form" class="searchForm">
+            <input type="text" name="query" autocomplete="off" class="search typeahead-search" value="" placeholder="Search your health conditions here"><a data-metrics-link="submit" class="searchIcon submit" href="#"><span class="icon icon-search"> </span> </a><ul class="typeahead-output"> </ul>
+        </form>
+        <script>
+            require(['search/1/typeahead'],function(typeahead){
+                $(function(){
+                    typeahead.init('');
+                });
+            });
+            $('#health-conditions-search-form .searchIcon.submit').on('click', function(e){
+                $('#health-conditions-search-form').submit();
+                e.preventDefault();
+            });
+        </script>
+    </div>
+    <div class="module-content">
+        <ul>
+            <li><a href="http://www.webmd.com/add-adhd/default.htm" data-metrics-link="1">ADHD</a></li>
+            <li><a href="http://www.webmd.com/allergies/default.htm" data-metrics-link="2">Allergies</a></li>
+            <li><a href="http://www.webmd.com/alzheimers/default.htm" data-metrics-link="3">Alzheimer's</a></li>
+            <li><a href="http://www.webmd.com/anxiety-panic/default.htm" data-metrics-link="4">Anxiety Disorders</a></li>
+            <li><a href="http://www.webmd.com/arthritis/default.htm" data-metrics-link="5">Arthritis</a></li>
+            <li><a href="http://www.webmd.com/asthma/default.htm" data-metrics-link="6">Asthma</a></li>
+            <li><a href="http://www.webmd.com/back-pain/default.htm" data-metrics-link="7">Back Pain</a></li>
+            <li><a href="http://www.webmd.com/cancer/default.htm" data-metrics-link="8">Cancer</a></li>
+            <li><a href="http://www.webmd.com/cholesterol-management/default.htm" data-metrics-link="9">Cholesterol</a></li>
+            <li><a href="http://www.webmd.com/cold-and-flu/default.htm" data-metrics-link="10">Cold, Flu, &amp; Cough</a></li>
+            <li><a href="http://www.webmd.com/lung/copd/default.htm" data-metrics-link="11">COPD</a></li>
+            <li><a href="http://www.webmd.com/depression/default.htm" data-metrics-link="12">Depression</a></li>
+            <li><a href="http://www.webmd.com/diabetes/type-2-diabetes-guide/type-2-diabetes" data-metrics-link="13">Diabetes</a></li>
+            <li><a href="http://www.webmd.com/digestive-disorders/default.htm" data-metrics-link="14">Digestive Disorders</a></li>
+            <li><a href="http://www.webmd.com/eye-health/default.htm" data-metrics-link="15">Eye Health</a></li>
+            <li><a href="http://www.webmd.com/heart/default.htm" data-metrics-link="16">Heart Health</a></li>
+            <li><a href="http://www.webmd.com/heartburn-gerd/default.htm" data-metrics-link="17">Heartburn/GERD</a></li>
+            <li><a href="http://www.webmd.com/hypertension-high-blood-pressure/default.htm" data-metrics-link="18">Hypertension</a></li>
+            <li><a href="http://www.webmd.com/mental-health/default.htm" data-metrics-link="19">Mental Health</a></li>
+            <li><a href="http://www.webmd.com/migraines-headaches/default.htm" data-metrics-link="20">Migraines</a></li>
+            <li><a href="http://www.webmd.com/multiple-sclerosis/default.htm" data-metrics-link="21">Multiple Sclerosis</a></li>
+            <li><a href="http://www.webmd.com/oral-health/default.htm" data-metrics-link="22">Oral Care</a></li>
+            <li><a href="http://www.webmd.com/osteoporosis/default.htm" data-metrics-link="23">Osteoporosis</a></li>
+            <li><a href="http://www.webmd.com/skin-problems-and-treatments/psoriasis/default.htm" data-metrics-link="24">Psoriasis</a></li>
+            <li><a href="http://www.webmd.com/rheumatoid-arthritis/default.htm" data-metrics-link="25">Rheumatoid Arthritis</a></li>
+            <li><a href="http://www.webmd.com/sexual-conditions/default.htm" data-metrics-link="26">Sexual Conditions</a></li>
+            <li><a href="http://www.webmd.com/skin-problems-and-treatments/default.htm" data-metrics-link="27">Skin Problems</a></li>
+            <li><a href="http://www.webmd.com/sleep-disorders/default.htm" data-metrics-link="28">Sleep Disorders</a></li>
+        </ul>
+        <div class="seeAll clearfix"><a href="http://www.webmd.com/a-to-z-guides/common-topics/default.htm" data-metrics-link="all">See All Health Conditions</a></div>
+    </div>
+</div>

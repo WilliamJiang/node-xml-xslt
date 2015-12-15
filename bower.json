@@ -1,0 +1,24 @@
+{
+  "name": "nodeApp",
+  "description": "",
+  "main": "",
+  "authors": [
+    "William Jiang <wjiang@webmd.net>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.22"
+  }
+}
