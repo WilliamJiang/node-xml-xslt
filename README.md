@@ -1,4 +1,19 @@
-### Sources:
+### 1. Quick start
+
+```sh
+// get the repository
+$ cd nodeApp/
+$ npm install
+$ bower install
+
+$ npm start
+//or:
+$ node bin/www
+```
+Then go to browser: <code>http://localhost:3000/</code> to start!
+
+## 2. Requirements
+### 2.1 Sources:
 
 1. This is the XML for home page [www.webmd.com](www.webmd.com):
 
@@ -25,7 +40,9 @@ http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/stagin
 1. render the EJS templates with translated JSON objects
 
 
-### Environments:
+## 3. Implmentation
+
+### 3.1 setup environment:
 
 1. Node + Express
 1. EJS HTML templates
@@ -74,7 +91,8 @@ can't access:
   }
 ```
 
-###
+### Reference
+
 [Converting XML to HTML in NodeJS using LibXSLT](http://stackoverflow.com/questions/27494825/converting-xml-to-html-in-nodejs-using-libxsltthrows-has-no-method-apply-erro)
 ```javascript
 var fs = require('fs');

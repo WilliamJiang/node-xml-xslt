@@ -47,10 +47,19 @@ function xslt4node() {
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
-    var html = xsl_process('xml/linklist.xml', 'xsl/linklist.xsl');
-    //xslt4node();
+    var linklist = xsl_process('xml/linklist.xml', 'xsl/linklist.xsl');
 
-    res.render('index', {title: webmd.title, linklist: html});
+    var module1 = xsl_process('xml/module1.xml', 'xsl/module1.xsl');
+
+    var module2 = xsl_process('xml/module2.xml', 'xsl/module2.xsl');
+
+    //xslt4node();
+    res.render('index', {
+        title: webmd.title,
+        module1: module1,
+        module2: module2,
+        linklist: linklist
+    });
 });
 
 module.exports = router;
