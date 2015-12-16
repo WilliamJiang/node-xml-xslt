@@ -1,49 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta charset="UTF-8"/>
-    <meta name="description"
-          content="The leading source for trustworthy and timely health and medical news and information. Providing credible health information, supportive community, and educational services by blending award-winning expertise in content, community services, expert commentary, and medical review."/>
-    <meta name="keywords"
-          content="WebMD,www.webmd.com,web md,health,pregnancy,medical research,medical information/webm,prevention,disease,health care,healthcare,health information,health news,healthcare information,drug information,cancer,diabetes,depression,asthma,medical library,cholesterol,herpes,bipolar,diet,weight loss"/>
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"/>
-
-    <meta property="og:title" content="WebMD - Better information. Better health."/>
-    <meta property="og:description"
-          content="The leading source for trustworthy and timely health and medical news and information. Providing credible health information, supportive community, and educational services by blending award-winning expertise in content, community services, expert commentary, and medical review."/>
-    <meta property="og:image"
-          content="http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/logos/webmd/web/webmd-logo-fb.jpg"/>
-    <meta property="og:url" content="http://www.webmd.com/default.htm"/>
-    <meta property="og:site_name" content="WebMD"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="fb:app_id" content="385978254785998"/>
-    <meta property="article:author" content="https://www.facebook.com/WebMD"/>
-    <meta property="article:publisher" content="https://www.facebook.com/WebMD"/>
-
-    <link rel='stylesheet' href='/css/style.css'/>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+    <% include partials/head %>
 </head>
 <body>
-<div class="masthead-nav-shell">
-    <div class="masthead-sitelogo-shell" data-metrics-module="">
-        <a href="http://www.webmd.com"
-           class="masthead-sitelogo-link"
-           data-metrics-link="logo"><img
-                    src="img/logo-webmd-site.png"
-                    class="navigation-globalnav-logo" alt="WebMD: Better information. Better health."
-                    title="WebMD: Better information. Better health.">
-        </a>
-        <h2 style="display: inline-block;margin-left:100px;"><%= title %></h2>
-    </div>
-</div>
 <section id="s1" class="section">
     <div id="ContentPane1" class="pane"></div>
-    <div id="ContentPane2" class="pane"></div>
+    <div id="ContentPane2" class="pane">
+        <% include partials/header %>
+    </div>
     <div id="ContentPane3" class="pane"></div>
     <div id="ContentPane4" class="pane"></div>
     <div id="ContentPane5" class="pane"></div>
@@ -59,15 +24,6 @@
         <div id="ContentPane10" class="pane"></div>
         <div id="ContentPane11" class="pane"></div>
         <div id="ContentPane12" class="pane">
-            <div class="">
-                <%- module1 %>
-            </div>
-            <div class="">
-                <%- module2 %>
-            </div>
-            <div class="">
-                <%- linklist %>
-            </div>
         </div>
         <div id="ContentPane13" class="pane"></div>
         <div id="ContentPane14" class="pane"></div>
@@ -138,7 +94,9 @@
     </section>
 </div>
 <section id="s8" class="section">
-    <div id="ContentPane64" class="pane"></div>
+    <div id="ContentPane64" class="pane">
+        <% include partials/footer %>
+    </div>
     <div id="ContentPane65" class="pane"></div>
     <div id="ContentPane66" class="pane"></div>
     <div id="ContentPane67" class="pane"></div>

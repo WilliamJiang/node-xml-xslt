@@ -1,0 +1,25 @@
+<div class="healthConditions module" id="" data-metrics-module="">
+    <div class="module-header clearfix">
+        <h2>Health A - Z</h2>
+        <form action="http://www.webmd.com/search/search_results/default.aspx" method="get"
+              name="health-conditions-search-form" id="health-conditions-search-form" class="searchForm">
+            <input type="text" name="query" autocomplete="off" class="search typeahead-search" value=""
+                   placeholder="Search your health conditions here">
+            <a data-metrics-link="submit"
+               class="searchIcon submit" href="#">
+                <span
+                        class="icon icon-search"> </span> </a>
+            <ul class="typeahead-output"></ul>
+        </form>
+    </div>
+    <div class="module-content">
+        <ul>
+            <% for(var i = 0; i < links.length; i++) { %>
+            <li><%= link_to('', 'link.Title') %></li>
+            <% } %>
+        </ul>
+        <div class="seeAll clearfix">
+            <a href="http://www.webmd.com/a-to-z-guides/common-topics/default.htm"
+               data-metrics-link="all">See All Health Conditions</a></div>
+    </div>
+</div>

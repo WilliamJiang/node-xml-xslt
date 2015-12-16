@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var fs = require('fs');
 var libxslt = require('libxslt');
 var libxmljs = require('libxmljs');
 var request = require('request');
@@ -26,18 +25,14 @@ webmd.results = [];
 
 function xsl_process(xml, xsl) {
 
-    //var doc = fs.readFileSync(xml, 'utf8');
-    //var stylesheetString = fs.readFileSync(xsl, 'utf8');
+    var stylesheet = libxslt.parse(xsl);
 
-    var doc = xml;
-    var stylesheetString = xsl;
-
-    var stylesheet = libxslt.parse(stylesheetString);
-
-    var result = stylesheet.apply(doc);
+    var result = stylesheet.apply(xml);
 
     console.log(result);
+
     webmd.results.push(result);
+
     return result;
 }
 
