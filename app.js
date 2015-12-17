@@ -5,12 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var webmd = require('./routes/webmd');
 var contentPane12 = require('./routes/contentPane12');
 
 var app = express();
+
+
+var helpers = require('express-helpers')(app);
 
 app.set('xml', path.join(__dirname, 'xml'));
 app.set('xsl', path.join(__dirname, 'xsl'));
@@ -67,6 +71,5 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;

@@ -1,14 +1,39 @@
-<!--<ul>-->
-    <!--<% for(var i=0; i<supplies.length; i++) {%>-->
-    <!--<li><%= supplies[i] %></li>-->
-    <!---->
-    <!--<li><%= link_to(supplies[i], 'supplies/'+supplies[i]) %></li>-->
-    <!--<li><%= img_tag('maid.jpg') %></li>-->
-    <!--<% } %>-->
-<!--</ul>-->
-
-<!--<% include contentPane12/editorial1 %>-->
-<!--<% include contentPane12/editorial2 %>-->
-<!--<% include contentPane12/linklist %>-->
-
+<div class="module spotlight" id="" data-metrics-module="">
+    <div class="module-content">
+        <div class="slider single">
+            <div class="singleheader">
+                <div class="slide">
+                    <ul class="listHorizontal">
+                        <% for (var i = 0; i < editorial1.listHorizontal.length; i++) { %>
+                        <li class="thumb video">
+                            <a class="block img clearfix" data-metrics-link="1" href="<%= editorial1[i].href %>">
+                                <img src="<%= editorial1[i].img %>" alt=""/>
+                            </a>
+                            <a class="info clearfix" data-metrics-link="1" href="<%= editorial1[i].href %>">
+                                <h4><%= editorial1[i].h4 %></h4>
+                                <div class="text"><%= editorial1[i].text %></div>
+                            </a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            <div class="thumbs">
+                <ul>
+                    <% for (var i = 0; i < editorial1.thumbs.length; i++) { %>
+                    <li class="video">
+                        <a href="<%= editorial1.thumbs[i].href %>">
+                            <img src="<%= editorial1.thumbs[i].src %>" alt="butter melting in pan"/>
+                            <div class="thumbtext">
+                                <div class="text"><%= editorial1.thumbs[i].text %></div>
+                                <div class="action"><%= editorial1.thumbs[i].action %></div>
+                            </div>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 

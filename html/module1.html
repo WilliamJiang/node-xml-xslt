@@ -4,7 +4,6 @@
     <title>JavaScript XSLT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"/>
-    <link rel="stylesheet" href="./cdcatalog.css"/>
 
 </head>
 <body>
@@ -34,7 +33,7 @@
 
         function displayResult() {
             xml = loadXMLDoc("../xml/module1.xml");
-            xsl = loadXMLDoc("../xslt/module1.xsl");
+            xsl = loadXMLDoc("../xsl/module1.xsl");
             // code for IE
             if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
                 ex = xml.transformNode(xsl);

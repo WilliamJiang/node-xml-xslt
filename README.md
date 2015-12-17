@@ -12,6 +12,17 @@ $ node bin/www
 ```
 Then go to browser: <code>http://localhost:3000/</code> to start!
 
+## Highlights:
+I am working on nodejs-xml-xsl
+
+(1) use nodejs stuff as server-side app environment:
+Nodejs – compared to ASP.net framework.
+Npm modules, such as async http-access, file-system access etc.
+Express.js as web-server
+Pure c-library to parse XML using XSL-transform.
+Based on my understanding, this
+
+
 ## 2. Requirements
 ### 2.1 Sources:
 
@@ -109,3 +120,6 @@ var stylesheet = libxslt.parse(stylesheetObj);
 var result = stylesheet.apply(doc);
 res.end(result);
 ```
+
+
+### XSLTJSON: Transforming XML to JSON using XSLT

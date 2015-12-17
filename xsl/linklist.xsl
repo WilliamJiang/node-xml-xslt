@@ -128,6 +128,3 @@ $('#health-conditions-search-form .searchIcon.submit').on('click', function(e){
     </xsl:if>
   </xsl:template>
 </xsl:stylesheet>
-
-
-

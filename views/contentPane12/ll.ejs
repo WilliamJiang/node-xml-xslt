@@ -1,5 +1,6 @@
 <div class="healthConditions module" id="" data-metrics-module="">
     <div class="module-header clearfix">
+        <h2><%=                         %></h2>
         <form action="http://www.webmd.com/search/search_results/default.aspx"
               method="get"
               name="health-conditions-search-form"
@@ -18,11 +19,11 @@
     <div class="module-content">
         <ul>
             <% for(var i = 0; i < links.length; i++) { %>
-            <li><a href="<%= links[i].url %>" data-metrics-link="<%= i + 1 %>"><%= links[i].text %></a></li>
+            <li><%= link_to('', 'link.Title') %></li>
             <% } %>
         </ul>
         <div class="seeAll clearfix">
-            <%- link_to(links[i], links[i]) %>
+            <%= link_to() %>
         </div>
     </div>
 </div>
