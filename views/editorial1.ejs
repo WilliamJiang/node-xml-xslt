@@ -6,12 +6,12 @@
                     <ul class="listHorizontal">
                         <% for (var i = 0; i < editorial1.listHorizontal.length; i++) { %>
                         <li class="thumb video">
-                            <a class="block img clearfix" data-metrics-link="1" href="<%= editorial1[i].href %>">
-                                <img src="<%= editorial1[i].img %>" alt=""/>
+                            <a class="block img clearfix" data-metrics-link="1" href="<%= editorial1.listHorizontal[i].href %>">
+                                <img src="<%= editorial1.listHorizontal[i].src %>" alt=""/>
                             </a>
-                            <a class="info clearfix" data-metrics-link="1" href="<%= editorial1[i].href %>">
-                                <h4><%= editorial1[i].h4 %></h4>
-                                <div class="text"><%= editorial1[i].text %></div>
+                            <a class="info clearfix" data-metrics-link="1" href="<%= editorial1.listHorizontal[i].href %>">
+                                <h4><%= editorial1.listHorizontal[i].h4 %></h4>
+                                <div class="text"><%= editorial1.listHorizontal[i].text %></div>
                             </a>
                         </li>
                         <% } %>
@@ -36,4 +36,3 @@
         </div>
     </div>
 </div>
-

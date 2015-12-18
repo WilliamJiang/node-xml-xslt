@@ -7,6 +7,6 @@ requirejs.config({
 
 require(['jquery'], function ($) {
 
-    console.log('nodejs - xml - xsl - xslt works!');
+    console.log('nodejs - what is the version ?');
 
 });

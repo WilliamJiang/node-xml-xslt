@@ -4,20 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var _ = require('lodash');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var webmd = require('./routes/webmd');
-var contentPane12 = require('./routes/contentPane12');
+var linklist = require('./routes/linklist');
+var editorial1 = require('./routes/editorial1');
+var editorial2 = require('./routes/editorial2');
 
 var app = express();
 
-
-var helpers = require('express-helpers')(app);
-
-app.set('xml', path.join(__dirname, 'xml'));
-app.set('xsl', path.join(__dirname, 'xsl'));
+/** for ejs template: link_to, img_tag */
+require('express-helpers')(app);
+app.set('constants', require('./config/constants.js'));
+app.set('xml', path.join(__dirname, 'modules'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,14 +32,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
- * william added for extenstion.
+ * william added for extention.
  * app.use('/data', express.static(config.root + '/data'));
  */
-
 app.use('/', routes);
-app.use('/users', users);
 app.use('/webmd', webmd);
-app.use('/contentPane12', contentPane12);
+app.use('/linklist', linklist);
+app.use('/editorial1', editorial1);
+app.use('/editorial2', editorial2);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

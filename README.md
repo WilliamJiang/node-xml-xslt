@@ -12,8 +12,8 @@ $ node bin/www
 ```
 Then go to browser: <code>http://localhost:3000/</code> to start!
 
+
 ## Highlights:
-I am working on nodejs-xml-xsl
 
 (1) use nodejs stuff as server-side app environment:
 Nodejs – compared to ASP.net framework.
@@ -21,6 +21,24 @@ Npm modules, such as async http-access, file-system access etc.
 Express.js as web-server
 Pure c-library to parse XML using XSL-transform.
 Based on my understanding, this
+
+##
+There are 2 options:
+1. use xsl to do the transformation: transform xml to div, which is default
+1. use npm-module to parse xml to json data.
+
+### xsl
+
+The following are in package.json:
+
+* libxmljs
+* libxslt
+* xslt4node
+
+
+### xml2json
+
+* xml2json
 
 
 ## 2. Requirements
@@ -123,3 +141,19 @@ res.end(result);
 
 
 ### XSLTJSON: Transforming XML to JSON using XSLT
+
+
+/**
+ * This is the XML for home page www.webmd.com : http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80eff7b3
+
+ Editorial Module : http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f046b5
+ XSL for editorial module: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/EditorialModule/Harmony%20Carousel%20Spotlight_091e9c5e80f2fc2d.xsl
+
+ Editorial Module 2: http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f4bedb
+ Xsl for editorial module: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging//webmd/PageBuilder_Assets/XSL/EditorialModule/conversations-blog_091e9c5e80f4ce8c.xsl
+
+
+ Linklist Module: http://ats.webmd.com/ATSFile.aspx?ID=091e9c5e80f08908
+ XSL for link list: http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/XSL/LinkList/Health%20Conditions_091e9c5e80f1ddd9.xsl
+
+ */

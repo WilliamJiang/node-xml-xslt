@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<webmd_rendition>
+    <content>
+        <wbmd_asset xmlns:xalan="http://xml.apache.org/xalan" object_type="wbmd_pb_page" id="091e9c5e8131f3dc">
+            <metadata_section>
+                <chronic_id>091e9c5e80eff7b3</chronic_id>
+                <r_object_id>091e9c5e8131f3dc</r_object_id>
+                <title>Harmony Homepage 2014</title>
+                <r_modify_date>12/17/2015 14:50:58</r_modify_date>
+                <wbmd_wdw_ttl>WebMD - Better information. Better health.</wbmd_wdw_ttl>
+                <wbmd_lk_ttl>WebMD - Better information. Better health.</wbmd_lk_ttl>
+                <wbmd_c_frnd_nm>/</wbmd_c_frnd_nm>
+                <wbmd_c_asset_name />
+                <wbmd_orig_pub_dt>nulldate</wbmd_orig_pub_dt>
+                <language_code />
+                <wbmd_keywords>WebMD,www.webmd.com,web md,health,pregnancy,medical research,medical information/webm,prevention,disease,health care,healthcare,health information,health news,healthcare information,drug information,cancer,diabetes,depression,asthma,medical library,cholesterol,herpes,bipolar,diet,weight loss</wbmd_keywords>
+                <wbmd_desc_meta>The leading source for trustworthy and timely health and medical news and information. Providing credible health information, supportive community, and educational services by blending award-winning expertise in content, community services, expert commentary, and medical review.</wbmd_desc_meta>
+                <wbmd_desc_user />
+                <wbmd_pb_use_art_prop_flag>0</wbmd_pb_use_art_prop_flag>
+                <wbmd_is_ssl_reqd>0</wbmd_is_ssl_reqd>
+                <wbmd_is_auth_reqd>0</wbmd_is_auth_reqd>
+                <wbmd_col_cat />
+                <wbmd_pb_thmbnl directive="imageurl" chronic_id="0000000000000000" />
+                <wbmd_c_channel_id />
+                <wbmd_prog_col />
+                <wbmd_publ>
+                    <r_object_type>wbmd_publication</r_object_type>
+                    <r_object_id>091e9c5e802a54c9</r_object_id>
+                    <wbmd_publ_name>WebMD Information Page</wbmd_publ_name>
+                    <wbmd_publ_display>WebMD Information Page</wbmd_publ_display>
+                    <wbmd_publ_type>1</wbmd_publ_type>
+                    <wbmd_publ_bus_entity />
+                </wbmd_publ>
+                <wbmd_bus_ref wbmd_storage_val="83" wbmd_lookup_type="business_reference" wbmd_disp_nm="Nav - Home Page" />
+                <wbmd_c_prim_top_id wbmd_storage_val="1728" wbmd_lookup_type="consumer_topic_id" wbmd_disp_nm="Home &amp; Top Stories" />
+                <wbmd_c_sec_top_id_group />
+                <wbmd_relv1_subj_cd_group>
+                    <wbmd_relv1_subj_cd />
+                </wbmd_relv1_subj_cd_group>
+                <wbmd_relv2_subj_cd_group>
+                    <wbmd_relv2_subj_cd />
+                </wbmd_relv2_subj_cd_group>
+                <wbmd_relv3_subj_cd_group>
+                    <wbmd_relv3_subj_cd />
+                </wbmd_relv3_subj_cd_group>
+                <wbmd_c_audnc_gndr_group />
+                <wbmd_c_audnc_age_group />
+            </metadata_section>
+            <content_section>
+                <webmd_page>
+                    <page_settings>
+                        <wbmd_pb_pagetemplate path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Templates/Harmony Homepage Template_091e9c5e810d5260" object_type="wbmd_pb_template" directive="friendlyurl" chronic_id="091e9c5e810d5260" />
+                        <webmd_is_ext_searchable>1</webmd_is_ext_searchable>
+                        <gated_username />
+                        <gated>0</gated>
+                        <refpath />
+                        <webmd_is_int_searchable>0</webmd_is_int_searchable>
+                        <dnn_id>0</dnn_id>
+                        <wbmd_pb_skin>/skins/FlexibleLayout/FlexibleLayout.aspx</wbmd_pb_skin>
+                        <wbmd_flexlayout_pb_css chronic_id="091e9c5e80edb6a0" object_type="wbmd_pb_css" path="/webmd/PageBuilder_Assets/CSS/Flexible_Layout_CSS/PageBuilder/2_column_layout_harmony.css" />
+                        <wbmd_flexlayout_rt_css chronic_id="091e9c5e80edb6a1" object_type="wbmd_pb_css" path="/webmd/PageBuilder_Assets/CSS/Flexible_Layout_CSS/Runtime/2_column_layout_harmony.css" />
+                    </page_settings>
+                    <page_data>
+                        <panes>
+                            <pane name="ContentPane2">
+                            </pane>
+                            <pane name="ContentPane64">
+                            </pane>
+                            <pane name="ContentPane1">
+                            </pane>
+                            <pane name="ContentPane57">
+                            </pane>
+                            <pane name="ContentPane71">
+                            </pane>
+                            <pane name="ContentPane13">
+                            </pane>
+                            <pane name="ContentPane29">
+                            </pane>
+                            <pane name="ContentPane47">
+                            </pane>
+                            <pane name="ContentPane21">
+                            </pane>
+                            <pane name="ContentPane19">
+                                <module chronic_id="091e9c5e80f046b5" class="EditorialModule" r_object_id="091e9c5e8131b989" path="editorial1.xml" />
+                                <module chronic_id="091e9c5e80f4bedb" class="EditorialModule" r_object_id="091e9c5e81165b24" path="editorial2.xml" />
+                                <module chronic_id="091e9c5e80f08908" class="LinkListModule" r_object_id="091e9c5e81165b2c" path="linklist.xml" />
+                            </pane>
+                            <pane name="ContentPane55">
+                            </pane>
+                            <pane name="ContentPane12">
+                            </pane>
+                            <pane name="ContentPane46">
+                            </pane>
+                            <pane name="ContentPane39">
+                            </pane>
+                            <pane name="ContentPane40">
+                            </pane>
+                            <pane name="ContentPane28">
+                            </pane>
+                        </panes>
+                        <javascripts>
+                            <javascript chronic_id="091e9c5e8094291d" directive="js" object_type="wbmd_pb_js" order="1" />
+                        </javascripts>
+                        <external_csss />
+                    </page_data>
+                </webmd_page>
+            </content_section>
+        </wbmd_asset>
+    </content>
+    <friendlyurls>
+        <target siteid="3" name="WebMD" issearchable="false" prefix="www" friendlyurl="/default.htm" owner="false">
+            <breadcrumb>
+                <bread piece="Home Page" prefix="www" friendlyurl="/default.htm" isdynamicnavmapnode="False" overridechronicleid="" />
+            </breadcrumb>
+            <centers>
+                <Package id="1257" name="homepage" chronicid="091e9c5e80eff7b3" prefix="www" friendlyurl="/default.htm" isdynamicnavmapnode="False" type="">Home Page</Package>
+            </centers>
+        </target>
+    </friendlyurls>
+    <referenced_objects>
+        <object chronic_id="091e9c5e810d5260" thmbnl="" pointer="0" path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Templates/Harmony Homepage Template_091e9c5e810d5260/template_Harmony Homepage Template_091e9c5e810d5260.wxml" />
+    </referenced_objects>
+    <container_hierarchy>
+        <container id="091e9c5e80edcfbd" />
+        <container id="091e9c5e810d5260" />
+        <container id="091e9c5e80eff7b3" />
+    </container_hierarchy>
+    <expanded_objects />
+</webmd_rendition>

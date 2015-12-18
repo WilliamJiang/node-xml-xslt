@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express');
 var router = express.Router();
 
@@ -90,7 +88,7 @@ var get_xmlDoc = function (xmlModule, callback) {
         }
         callback();
     });
-}
+};
 
 var complete_Processing = function (err) {
     // if any of the file processing produced an error, err would equal that error

@@ -1,5 +1,6 @@
 /**
  * this is old version of index.js:
+ * use libxslt, libxmljs, xslt4node
  * 1. use xsl to parse xml
  * 2. put generated Doc-data to <div class="contentPane12"></div>
  */
@@ -17,6 +18,7 @@ webmd.title = 'WebMD - Better information. Better health.';
 function xsl_process(xml, xsl) {
 
     var doc = fs.readFileSync(xml, 'utf8');
+
     var stylesheetString = fs.readFileSync(xsl, 'utf8');
 
     var stylesheet = libxslt.parse(stylesheetString);
@@ -24,29 +26,6 @@ function xsl_process(xml, xsl) {
     var result = stylesheet.apply(doc);
 
     return result;
-}
-
-/**
- * Not Work.
- */
-function xslt4node() {
-
-    var xslt4node = require('xslt4node');
-    var config = {
-        xsltPath: 'xsl/linklist.xsl',
-        sourcePath: 'xml/linkist.xml',
-        result: function (err, buffer) {
-            console.log(err, buffer);
-        },
-        params: {},
-        props: {}
-    };
-    xslt4node.transform(config, function (err, results) {
-        if (err) {
-            console.log(err);
-        }
-        console.log(results);
-    });
 }
 
 /* GET home page. */
@@ -58,7 +37,6 @@ router.get('/', function (req, res, next) {
 
     var module2 = xsl_process('xml/module2.xml', 'xsl/module2.xsl');
 
-    //xslt4node();
     res.render('index', {
         title: webmd.title,
         module1: module1,
