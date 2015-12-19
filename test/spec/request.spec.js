@@ -1,15 +1,12 @@
 var request = require("request");
-var webmd = require('../../controllers/webmd');
-
 var base_url = "http://localhost:3000/webmd";
 
-describe("Node XML Server testing: ", function () {
+describe("Node XML Server request.js testing: ", function () {
     /**
      * Node.js is an asynchronous environment, so there is a chance that the it
      * block will finish before the expectation. To mitigate this problem,
      * we will use the done callback — a callback available only in Jasmine-node,
      * and not in pure Jasmine — to synchronize it with its expect:
-     *
      */
     describe("GET /", function () {
         it("returns status code 200", function (done) {
@@ -24,18 +21,6 @@ describe("Node XML Server testing: ", function () {
                 expect(body).toContain("WebMD");
                 done();
             });
-        });
-    });
-
-    describe("controllers webmd", function () {
-        it("should be defined", function () {
-            expect(webmd).toBeDefined();
-        });
-        it("webmd should have webmd_page method", function () {
-            expect(webmd.webmd_page).toBeDefined();
-        });
-        it("webmd should have get_available_modules method", function () {
-            expect(webmd.get_available_modules).toBeDefined();
         });
     });
 });
