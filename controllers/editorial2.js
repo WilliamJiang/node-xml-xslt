@@ -4,9 +4,6 @@ var parser = require('xml2json');
 var CONSTANTS = require('../config/constants');
 
 
-/**
- * e.g.: http://www.webmd.com/arthritis/default.htm
- */
 function get_url_by_cid(chronic_id, ref_objs) {
     var url = '';
     var matched = ref_objs.filter(function (obj) {
@@ -21,20 +18,37 @@ function get_url_by_cid(chronic_id, ref_objs) {
     return CONSTANTS.wxml.url + url;
 }
 
-function assembly_links(links, ref_objs) {
-    var link_ary = [];
-    links.forEach(function (link) {
+function assembly_links(links, ref_objs, descriptions, body_images, title) {
+    var editorial = {};
+    var link = links[0];
 
-        //console.log(typeof link, link.link_link.chronic_id);
+    var url = 'dummry_url'; //get_url_by_cid(link.link_link.chronic_id, ref_objs);
 
-        var url = get_url_by_cid(link.link_link.chronic_id, ref_objs);
-
-        link_ary.push({
-            url: url,
-            text: link.link_text
-        });
-    });
-    return link_ary;
+    editorial = {
+        h2: title,
+        h4: title,
+        image: {
+            href: 'body_images???',
+            src: 'body_images???',
+        },
+        title: {
+            href: 'link.link_text',
+            text: 'link.link_text'
+        },
+        content: {
+            href: 'content_href',
+            text: 'content_text'
+        },
+        links: {
+            href: 'links_href',
+            text: 'links_text'
+        },
+        author: {
+            href: 'author_href',
+            text: 'author_text'
+        }
+    };
+    return editorial;
 }
 
 
@@ -44,17 +58,22 @@ function process_module(xml_file) {
 
     var objs = parser.toJson(doc, {object: true});
 
-    var links = null;
+    var links = null, descriptions = null, body_images = null, title = '';
     try {
         links =
             objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
+
+        descriptions =
+            objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.descriptions.description;
+
+        body_images =
+            objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.body_images.body_image;
+
+        title = objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.module_title;
+
     }
     catch (e) {
     }
-
-    console.log(typeof links, links.length);
-
-    /////////////////////
 
     var ref_objs = null;
     try {
@@ -64,9 +83,7 @@ function process_module(xml_file) {
     catch (e) {
     }
 
-    console.log(typeof ref_objs, ref_objs.length);
-
-    return assembly_links(links, ref_objs);
+    return assembly_links(links, ref_objs, descriptions, body_images, title);
 }
 
 

@@ -41,28 +41,18 @@ router.get('/', function (req, res, next) {
         else if (/editorial1/i.test(m.path)) {
             editorial1 = editorial1_ctrl.process_module(folder + m.path);
         }
-        else if (/editorial2/i.test(m.class)) {
+        else if (/editorial2/i.test(m.path)) {
             editorial2 = editorial2_ctrl.process_module(folder + m.path);
         }
-
-        //var json = webmd_ctrl.process_module(folder + m.path);
-        //if (/linklist/i.test(m.class)) {
-        //    linklist = json;
-        //}
-        //else if (/editorial1/i.test(m.class)) {
-        //    editorial1 = json;
-        //}
-        //else if (/editorial2/i.test(m.class)) {
-        //    editorial2 = json;
-        //}
     });
 
     console.log('editorial1:', editorial1);
+    console.log('editorial2:', editorial2);
 
     res.render('webmd', {
         title: 'WebMD - Better information. Better health.',
         editorial1: editorial1,
-        //editorial2: editorial2,
+        editorial2: editorial2,
         links: linklist
     });
 
