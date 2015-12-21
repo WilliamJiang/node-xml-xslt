@@ -455,14 +455,3 @@ requirejs(['carousel/1/carousel'],function(carousel){]]></xsl:text>
 		<img src="{$src}" alt="{$alt}"/>
 	</xsl:template>
 </xsl:stylesheet>
-
-
-
-
-
-
-
-
-
-
-

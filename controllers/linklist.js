@@ -3,6 +3,29 @@ var parser = require('xml2json');
 
 var CONSTANTS = require('../config/constants');
 
+var settings = CONSTANTS.linklist;
+
+function Linklist(settings) {
+    this.image_server_url = settings.image_server_url;
+    this.moduletitle = settings.moduletitle;
+    this.site_id = settings.site_id;
+    this.items_per_slide = settings.items_per_slide;
+    this.is_gravity = settings.is_gravity;
+    this.domain = settings.domain;
+}
+
+Linklist.prototype.get_url_href = function () {
+
+};
+
+var linklist = {
+    init: function (obj) {
+        this.ll = new Linklist(settings);
+        this.root = obj.webmd_rendition;
+    },
+
+};
+
 
 /**
  * e.g.: http://www.webmd.com/arthritis/default.htm

@@ -3,6 +3,120 @@ var parser = require('xml2json');
 
 var CONSTANTS = require('../config/constants');
 
+/**
+ * transform .xsl to js.
+ */
+var settings = CONSTANTS.editorial2;
+
+////////////////////////
+function Editorial2(settings) {
+    this.domain = settings.domain || 'webmd.com';
+    this.domain = settings.domain || '';
+    this.site_id = settings.site_id || 3;
+}
+
+
+Editorial2.prototype.is_action_text = function (links) {
+    return !!links.link[0].action_text;
+};
+
+Editorial2.prototype.is_link_url = function (links) {
+    return !!links.link[0].link_url.chronic_id;
+};
+
+Editorial2.prototype.link_url_href = function () {
+    return;
+};
+
+
+Editorial2.prototype.get_url_href = function (ObjectID, ref_objs) {
+    var pointer = ref_objs.pointer;
+    if (ref_objs.object && pointer === '0') {
+
+    }
+    else if (1) {
+
+    }
+};
+
+var editorial2 = {
+
+    init: function (obj) {
+        this.e2 = new Editorial2(settings);
+        this.root = this.webmd_rendition(obj);
+    },
+    webmd_rendition: function (xml_obj) {
+        return xml_obj.webmd_rendition;
+    },
+    content: function () {
+        return this.webmd_rendition().content;
+    },
+    module_settings: function () {
+        return this.content().wbmd_asset.webmd_module.module_settings;
+    },
+    friendlyurls: function () {
+        return;
+    },
+    referenced_objects: function () {
+        return;
+    },
+    container_hierarchy: function () {
+        return;
+    },
+    expanded_objects: function () {
+        return expanded_objects;
+    },
+    blogImage: function () {
+        return {
+            href: this.blogImage,
+            src: '',
+        }
+    },
+    blogTitle: function () {
+        return {
+            href: '',
+            text: ''
+        }
+    },
+    blogContent: function () {
+        return {
+            href: '',
+            text: ''
+        }
+    },
+    linksRow: function () {
+        return {
+            href: '',
+            text: '',
+        }
+    },
+    authorRow: function () {
+        return {
+            href: '',
+            text: ''
+        }
+    },
+    assembly: function () {
+        this.init();
+        return {
+            header: {
+                h2: this.h2()
+            },
+            content: {
+                h4: this.h4(),
+                blogImage: this.blogImage(),
+                blogTitle: this.blogTitle(),
+                blogContent: this.blogContent(),
+                linksRow: this.linksRow(),
+                authorRow: this.authorRow()
+            },
+        }
+    }
+};
+
+
+////////////////////////
+
 
 function get_url_by_cid(chronic_id, ref_objs) {
     var url = '';
@@ -28,8 +142,8 @@ function assembly_links(links, ref_objs, descriptions, body_images, title) {
         h2: title,
         h4: title,
         image: {
-            href: 'body_images???',
-            src: 'body_images???',
+            href: 'http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/newborn_alt1_other/650x350_newborn_alt1_other.jpg?resize=611px:329px',
+            src: 'http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/newborn_alt1_other/650x350_newborn_alt1_other.jpg?resize=611px:329px',
         },
         title: {
             href: 'link.link_text',
@@ -51,6 +165,10 @@ function assembly_links(links, ref_objs, descriptions, body_images, title) {
     return editorial;
 }
 
+/**
+ *
+ * @param xml_file
+ */
 
 function process_module(xml_file) {
 

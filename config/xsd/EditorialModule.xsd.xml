@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Maqluuk (None/None) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	xmlns:codegen="urn:schemas-microsoft-com:xml-msprop" elementFormDefault="qualified" attributeFormDefault="unqualified"
+	id="EditorialModuleDS">
+	<xs:simpleType name="directive_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="imageurl" />
+			<xs:enumeration value="pointerurl" />
+			<xs:enumeration value="friendlyurl" />
+      <xs:enumeration value="expandcontentandbasicmeta" />
+   </xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="content_id">
+		<xs:attribute name="wbmd_lookup_type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="100" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="wbmd_storage_value" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="100" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="chronic_id" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="16" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="directive" type="directive_type" use="optional" />
+		<xs:attribute name="object_type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="100" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="module_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="module_title">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="300" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+        <xs:element name="module_link" type="content_id" minOccurs="0" />
+        <xs:element name="module_link_view" default="Page Refresh(Default)" codegen:nullValue="Page Refresh(Default)"
+					minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Page Refresh(Default)" />
+              <xs:enumeration value="New Window - 1000x600" />
+              <xs:enumeration value="SDC Pop Up - 600x700" />
+              <xs:enumeration value="Small Pop Up - 380x210" />
+              <xs:enumeration value="Scrollable Pop Up - 530x490" />
+              <xs:enumeration value="Window" />
+              <xs:enumeration value="Pop Up" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="links">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="link_bullet" type="xs:boolean" default="1" />
+							<xs:element name="link" minOccurs="0" maxOccurs="999">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="link_text" nillable="true" codegen:nullValue="">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <!--<xs:minLength value="0" />-->
+                          <xs:maxLength value="4000" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="action_text" nillable="true" codegen:nullValue="">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <!--<xs:minLength value="0" />-->
+                          <xs:maxLength value="4000" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="link_url" type="content_id" minOccurs="0" />
+                    <xs:element name="link_source_icon" type="content_id" />
+                    <xs:element name="link_link_view" default="Page Refresh(Default)" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <xs:enumeration value="Page Refresh(Default)" />
+                          <xs:enumeration value="New Window – 1000x600" />
+                          <xs:enumeration value="SDC Pop Up – 600x700" />
+                          <xs:enumeration value="Small Pop Up - 380x210" />
+                          <xs:enumeration value="Scrollable Pop Up – 530x490" />
+                          <xs:enumeration value="Pop Up" />
+                          <xs:enumeration value="Window" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="link_id" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" />
+										<xs:element name="sort_order" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="0"
+											msdata:AutoIncrementStep="10" />
+                  </xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="descriptions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="description" minOccurs="0" maxOccurs="999">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="description_text" nillable="true" codegen:nullValue="">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <!--<xs:minLength value="0" />-->
+                          <xs:maxLength value="4000" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>										
+										<xs:element name="description_id" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" />
+										<xs:element name="sort_order" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="0"
+											msdata:AutoIncrementStep="10" />
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="body_images">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="body_image" minOccurs="0" maxOccurs="999">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="source" type="content_id" />
+										<xs:element name="override_text" nillable="true" minOccurs="0" codegen:nullValue="">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <!--<xs:minLength value="0" />-->
+                          <xs:maxLength value="200" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="image_link" type="content_id" minOccurs="0" />
+										<xs:element name="image_link_view" default="Page Refresh(Default)" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+                          <xs:enumeration value="Page Refresh(Default)" />
+                          <xs:enumeration value="New Window – 1000x600" />
+                          <xs:enumeration value="SDC Pop Up – 600x700" />
+                          <xs:enumeration value="Small Pop Up - 380x210" />
+                          <xs:enumeration value="Scrollable Pop Up – 530x490" />
+                          <xs:enumeration value="Pop Up" />
+                          <xs:enumeration value="Window" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="alignment" default="left" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="left" />
+													<xs:enumeration value="right" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="image_id" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" />
+                    <xs:element name="sort_order" type="xs:int" minOccurs="0" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="0"
+											msdata:AutoIncrementStep="10" />
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+        <xs:element name="Article" type="content_id" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
