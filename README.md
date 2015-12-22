@@ -177,3 +177,9 @@ http://img.webmd.com/dtmcms/live/
 <wbmd_pb_moduledataschema path="/webmd_uk/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
 <wbmd_pb_moduledataschema path="/webmd/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
 <wbmd_pb_owner_page_id path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Homepage 2014_091e9c5e80eff7b3/page_Homepage 2014_091e9c5e80eff7b3.xml" object_type="wbmd_pb_page" chronic_id="091e9c5e80eff7b3" />
+
+
+### Performance and testing
+
+* Benchmark.js
+* loadtest - npm

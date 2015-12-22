@@ -40,7 +40,7 @@ editorial.content_id = {
     wbmd_lookup_type: '',
     wbmd_storage_value: '',
     chronic_id: '',
-    directive: this.directive_type[0],
+    directive: editorial.directive_type[0],
     object_type: ''
 };
 
@@ -58,16 +58,16 @@ editorial.alignment = ['left', 'right'];
 
 editorial.module_data = {
     module_title: '',
-    module_link: this.content_id,
-    module_link_view: this.link_view[0],
+    module_link: editorial.content_id,
+    module_link_view: editorial.link_view[0],
     links: [{
         link_bullet: 1,
         link: {
             link_text: '',
             action_text: '',
-            link_url: this.content_id,
-            link_source_icon: this.content_id,
-            link_link_view: this.link_view[0],
+            link_url: editorial.content_id,
+            link_source_icon: editorial.content_id,
+            link_link_view: editorial.link_view[0],
             link_id: 0,
             sort_order: 0
         }
@@ -81,16 +81,16 @@ editorial.module_data = {
     }],
     body_images: [{
         body_image: {
-            source: this.content_id,
+            source: editorial.content_id,
             override_text: '',
-            image_link: this.content_id,
-            image_link_view: this.link_view[0],
-            alignment: this.alignment[0],
+            image_link: editorial.content_id,
+            image_link_view: editorial.link_view[0],
+            alignment: editorial.alignment[0],
             image_id: 0,
             sort_order: 0
         }
     }],
-    Article: this.content_id
+    Article: editorial.content_id
 };
 
 /**
@@ -125,7 +125,7 @@ linklist.content_id = {
     wbmd_lookup_type: '',
     wbmd_storage_value: '',
     chronic_id: '',
-    directive: this.directive_type[0],
+    directive: linklist.directive_type[0],
     object_type: ''
 };
 
@@ -139,23 +139,23 @@ linklist.eds_add_info_property_type = [{
 linklist.module_data = {
     module_title: '',
     module_link: '',
-    module_link_view: this.link_view[0],
+    module_link_view: linklist.link_view[0],
     bullets: 'On',
     links: [{
         link: {
             link_text: '',
-            link_link: this.content_id,
-            eds_additional_information: this.eds_additional_information,
-            link_source_icon: this.content_id,
-            link_link_view: this.link_view[0],
+            link_link: linklist.content_id,
+            eds_additional_information: linklist.eds_additional_information,
+            link_source_icon: linklist.content_id,
+            link_link_view: linklist.link_view[0],
             RowID: 0,
             SortOrder: 0
         }
     }],
     button: {
         button_title: '',
-        button_link: this.content_id,
-        button_link_view: this.link_view[0]
+        button_link: linklist.content_id,
+        button_link_view: linklist.link_view[0]
     },
 };
 
@@ -163,5 +163,6 @@ module.exports = {
     wxml: wxml,
     editorial1: editorial1,
     editorial2: editorial2,
+    editorial: editorial,
     linklist: linklist
 };
