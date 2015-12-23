@@ -1,5 +1,5 @@
-function XSD(settings) {
-    this.settings = settings;
+function XSD(defaults) {
+    this.settings = defaults;
 }
 
 XSD.prototype = {};

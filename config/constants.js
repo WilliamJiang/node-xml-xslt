@@ -1,24 +1,11 @@
+var path = require('path');
+var dir = path.dirname() + '/modules/';
+
 var wxml = {
-    folder: 'modules/',
+    folder: dir,
+    home: dir + 'home.xml',
+    index: dir + 'index.xml',
     url: 'http://www.webmd.com'
-};
-
-/**
- * extract from .xsl for default settings.
- */
-var editorial1 = {
-    image_server_url: 'http://img.preview.webmd.com/dtmcms/preview',
-    moduletitle: '',
-    site_id: 3,
-    items_per_slide: 1,
-    is_gravity: 0,
-    domain: 'webmd.com'
-};
-
-var editorial2 = {
-    domain: 'webmd.com',
-    moduletitle: '',
-    site_id: 3
 };
 
 /**
@@ -98,12 +85,6 @@ editorial.module_data = {
  */
 var linklist = {};
 
-linklist.defaults = {
-    domain: 'webmd.com',
-    moduletitle: '',
-    site_id: 3
-};
-
 linklist.directive_type = [
     'imageurl',
     'pointerurl',
@@ -159,10 +140,35 @@ linklist.module_data = {
     },
 };
 
+
+/////////////////////////
+
+linklist.defaults = {
+    image_server_url: '',
+    items_per_slide: '',
+    is_gravity: '',
+    domain: 'webmd.com',
+    moduletitle: '',
+    site_id: 3
+};
+
+editorial.defaults = {
+    image_server_url: 'http://img.preview.webmd.com/dtmcms/preview',
+    moduletitle: '',
+    site_id: 3,
+    items_per_slide: 1,
+    is_gravity: 0,
+    domain: 'webmd.com'
+};
+
+var webmd = {
+    defaults: {}
+};
+
+/////////////////////////
 module.exports = {
     wxml: wxml,
-    editorial1: editorial1,
-    editorial2: editorial2,
     editorial: editorial,
-    linklist: linklist
+    linklist: linklist,
+    webmd: webmd,
 };

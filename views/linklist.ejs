@@ -18,11 +18,12 @@
     <div class="module-content">
         <ul>
             <% for(var i = 0; i < links.length; i++) { %>
-            <li><a href="<%= links[i].url %>" data-metrics-link="<%= i + 1 %>"><%= links[i].text %></a></li>
+            <li><a href="<%= links[i].url %>"
+                   data-metrics-link="<%= i + 1 %>"><%= links[i].text %></a></li>
             <% } %>
         </ul>
         <div class="seeAll clearfix">
-            <%- link_to(links[i], links[i]) %>
+            <!-- link_to(links[i], links[i])-->
         </div>
     </div>
 </div>

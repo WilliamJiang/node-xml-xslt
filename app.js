@@ -8,9 +8,6 @@ var _ = require('lodash');
 
 var routes = require('./routes/index');
 var webmd = require('./routes/webmd');
-var linklist = require('./routes/linklist');
-var editorial1 = require('./routes/editorial1');
-var editorial2 = require('./routes/editorial2');
 
 var app = express();
 
@@ -37,9 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', routes);
 app.use('/webmd', webmd);
-app.use('/linklist', linklist);
-app.use('/editorial1', editorial1);
-app.use('/editorial2', editorial2);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
