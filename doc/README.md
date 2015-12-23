@@ -2,7 +2,7 @@
 
 ```sh
 // get the repository
-$ cd nodeApp/
+$ cd node-runtime/
 $ npm install
 $ bower install
 
