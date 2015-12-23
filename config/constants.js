@@ -170,5 +170,5 @@ module.exports = {
     wxml: wxml,
     editorial: editorial,
     linklist: linklist,
-    webmd: webmd,
+    webmd: webmd
 };

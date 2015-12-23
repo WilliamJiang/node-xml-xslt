@@ -2,100 +2,65 @@ var express = require('express');
 var router = express.Router();
 
 var fs = require('fs');
-var async = require('async');
-var request = require('request');
+var path = require('path');
 var parser = require('xml2json');
+var _ = require('lodash');
+var cheerio = require('cheerio');
 
-var CONSTANTS = require('../config/constants');
+var dir = path.dirname() + '/../';
 
+var WebMD = require(dir + 'controllers/webmd');
+var Facade = require(dir + 'controllers/facade');
+
+var CONSTANTS = require(dir + 'config/constants');
 /* locally: modules/  */
-var folder = CONSTANTS.wxml.folder;
+var home = CONSTANTS.wxml.home;
 
+var defaults = CONSTANTS.webmd.defaults;
 
-function process_module(xml_file) {
+var webmdCtrl = new WebMD.WebMDCtrl(defaults);
 
-    var doc = fs.readFileSync(xml_file, 'utf8');
+var facadeCtrl = new Facade.FacadeCtrl(defaults);
+
+/**
+ * and extend settings: 1 from root-constructor, 1 from itself.
+ */
+webmdCtrl.extend(WebMD.options);
+
+router.get('/', function (req, res, next) {
+
+    var doc = fs.readFileSync(home, 'utf8');
 
     var objs = parser.toJson(doc, {object: true});
 
-    var links = null;
-    try {
-        links =
-            objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
-    }
-    catch (e) {
-    }
+    var panes = webmdCtrl.webmd_page(objs);
 
-    console.log(typeof links, links.length);
+    var available_modules = [], json_objects = {};
 
-    /////////////////////
-
-    var ref_objs = null;
-    try {
-        ref_objs =
-            objs.webmd_rendition.referenced_objects.object;
-    }
-    catch (e) {
+    if (Array.isArray(panes)) {
+        available_modules = webmdCtrl.get_available_modules(panes);
     }
 
-    console.log(typeof ref_objs, ref_objs.length);
+    json_objects = facadeCtrl.process_modules(available_modules);
 
-    /**
-     * e.g.: http://www.webmd.com/arthritis/default.htm
-     */
-    function get_url_by_cid(chronic_id, ref_objs) {
-        var url = '';
-        var matched = ref_objs.filter(function (obj) {
-            return obj.chronic_id == chronic_id;
-        });
-        try {
-            url = matched[0].target[0].friendlyurl;
-        }
-        catch (e) {
-        }
+    console.log('BEFORE RENDERING:', json_objects);
+    //console.log(available_modules);
 
-        return 'http://www.webmd.com' + url;
-    }
+    var ejs_html = webmdCtrl.setup_views_1(json_objects);
 
-    function assembly_links(links, ref_objs) {
-        var link_ary = [];
-        links.forEach(function (link) {
+    var contentPane = _.keys(json_objects).join('');
 
-            console.log(typeof link, link.link_link.chronic_id);
+    //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
+    //1. res.render('webmd', json_objects);
+    //2. res.status(200).send(html);
 
-            var url = get_url_by_cid(link.link_link.chronic_id, ref_objs);
+    res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
 
-            link_ary.push({
-                url: url,
-                text: link.link_text
-            });
-        });
-        return link_ary;
-    }
+        var $ = cheerio.load(html);
 
-    return assembly_links(links, ref_objs);
-}
+        $('#' + contentPane).append(ejs_html);
 
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    /**
-     * what is req?
-     * TODO: parse the req.params so dynamically get xmls and xsls pairs.
-     *     var params = req.params;
-     */
-    //async_fetch_xmls(res);
-
-
-    var editorial1 = process_module(contentPane12.xmls_local.editorial1);
-    var editorial2 = process_module(contentPane12.xmls_local.editorial2);
-    var linklist = process_module(contentPane12.xmls_local.linklist);
-
-    res.render('index', {
-        title: contentPane12.title,
-        editorial1: editorial1,
-        editorial2: editorial2,
-        links: linklist
+        res.send($.html());
     });
 });
 

@@ -1,8 +1,9 @@
 var fs = require('fs');
 var path = require('path');
 var _ = require('lodash');
+var ejs = require('ejs');
+var cheerio = require('cheerio');
 
-var parser = require('xml2json');
 var CONSTANTS = require('../config/constants');
 var XSD = require('./XSD');
 
@@ -101,7 +102,10 @@ WebMD.prototype.get_available_modules = function (panes) {
     return available_modules;
 };
 
-
+/**
+ * this function needs help of jQuery.ready():
+ * add <%- include .ejs -%> at bottom of webmd.ejs.
+ */
 WebMD.prototype.setup_views = function (json_objects) {
     var ejs_objects = null;
     _.forEach(json_objects, function (val, key) {
@@ -109,7 +113,7 @@ WebMD.prototype.setup_views = function (json_objects) {
          * { ContentPane19: [ editorial: [ [Object], [Object] ],
          * links: [ [Object],...] ] ] }
          */
-        ejs_objects =  {
+        ejs_objects = {
             title: 'WebMD: Better information. Better health.',
             ContentPane: key,
             links: val.links,
@@ -118,6 +122,53 @@ WebMD.prototype.setup_views = function (json_objects) {
         };
     });
     return ejs_objects;
+};
+
+WebMD.prototype.setup_views_1 = function (json_objects) {
+    var html = '', templateString = '';
+
+    _.forEach(json_objects, function (val, key) {
+
+        if (Array.isArray(val.editorial[0]) || (typeof val.editorial[0]==='object')) {
+            templateString = fs.readFileSync('views/editorial1.ejs', 'utf-8');
+
+            html += ejs.render(templateString, {
+                ContentPane: key,
+                editorial1: val.editorial[0],
+            });
+        }
+
+        if (Array.isArray(val.editorial[1]) || (typeof val.editorial[1]==='object')) {
+            var templateString = fs.readFileSync('views/editorial2.ejs', 'utf-8');
+            html += ejs.render(templateString, {
+                ContentPane: key,
+                editorial2: val.editorial[1]
+            });
+        }
+
+        if (Array.isArray(val.links)) {
+            var templateString = fs.readFileSync('views/linklist.ejs', 'utf-8');
+            html += ejs.render(templateString, {
+                ContentPane: key,
+                links: val.links,
+            });
+        }
+    });
+    return html;
+};
+
+/**
+ * dynamic update HTML-template, then ejs to inject JSON-data.
+ */
+WebMD.prototype.dynamic_update_template = function (ContentPane, snippet) {
+
+    var templateFile = 'views/webmd.ejs';
+
+    var $ = cheerio.load(fs.readFileSync(templateFile, 'utf8'));
+
+    $('#' + ContentPane).append(snippet);
+
+    return $.html();
 };
 
 var options = {
@@ -136,24 +187,3 @@ module.exports = {
     WebMDCtrl: WebMD,
     options: options
 };
-
-/**
- * dynamic update HTML-template, then ejs to inject JSON-data.
- *
- var cheerio = require('cheerio');
- function dynamicUpdateTemplate(ContentPane, snippet) {
-
-    var templateFile = 'views/webmd.ejs';
-
-    var html = fs.readFileSync(templateFile, 'utf8');
-
-    $ = cheerio.load(html);
-
-    $('pane[name=' + ContentPane + ']').append(snippet);
-
-    fs.writeFileSync(templateFile);
- }
- var html = '<% include linklist %>';
- dynamicUpdateTemplate('ContentPane19', html);
- *
- */

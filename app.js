@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
- * william added for extention.
+ * william added for extension.
  * app.use('/data', express.static(config.root + '/data'));
  */
 app.use('/', routes);

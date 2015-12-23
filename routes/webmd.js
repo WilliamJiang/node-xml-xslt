@@ -4,6 +4,8 @@ var router = express.Router();
 var fs = require('fs');
 var path = require('path');
 var parser = require('xml2json');
+var _ = require('lodash');
+var cheerio = require('cheerio');
 
 var dir = path.dirname() + '/../';
 
@@ -39,48 +41,27 @@ router.get('/', function (req, res, next) {
         available_modules = webmdCtrl.get_available_modules(panes);
     }
 
-    //console.log(available_modules);
-
     json_objects = facadeCtrl.process_modules(available_modules);
 
     console.log('BEFORE RENDERING:', json_objects);
+    //console.log(available_modules);
 
-    var ejs_objects = webmdCtrl.setup_views(json_objects);
+    var ejs_html = webmdCtrl.setup_views_1(json_objects);
 
-    res.render('webmd', ejs_objects);
+    var contentPane = _.keys(json_objects).join('');
 
-    //res.render('webmd', json_objects);
-    //res.render('webmd', json_objects, function(err, html) {
-    //    console.log('html', html);
-    //    res.send(html);
-    //    res.end();
-    //});
+    //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
+    //1. res.render('webmd', json_objects);
+    //2. res.status(200).send(html);
+
+    res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+
+        var $ = cheerio.load(html);
+
+        $('#' + contentPane).append(ejs_html);
+
+        res.send($.html());
+    });
 });
 
 module.exports = router;
-
-
-/**
- * TODO: where to insert these tags?
-
-    <div class="editorial1">
-        <% include editorial1 %>
-    </div>
-    <div class="editorial2">
-        <% include editorial2 %>
-    </div>
-    <div class="linklist">
-        <% include linklist %>
-    </div>
-
-    var editorial1 = new EJS({
-        url: '../views/editorial1.ejs'
-    }).render(json_objects.ContentPane19.editorial[0]);
-    var editorial2 = new EJS({
-        url: '../views/editorial2.ejs'
-    }).render(json_objects.ContentPane19.editorial[1]);
-    var linklist = new EJS({
-        url: '../views/linklist.ejs'
-    }).render(json_objects.ContentPane19.links);
-    console.log('+++++++++', editorial1, editorial2, linklist);
- */
