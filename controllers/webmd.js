@@ -101,14 +101,23 @@ WebMD.prototype.get_available_modules = function (panes) {
     return available_modules;
 };
 
-WebMD.prototype.setup_views = function (json_objects) {
 
+WebMD.prototype.setup_views = function (json_objects) {
+    var ejs_objects = null;
     _.forEach(json_objects, function (val, key) {
         /**
          * { ContentPane19: [ editorial: [ [Object], [Object] ],
          * links: [ [Object],...] ] ] }
          */
+        ejs_objects =  {
+            title: 'WebMD: Better information. Better health.',
+            ContentPane: key,
+            links: val.links,
+            editorial1: val.editorial[0],
+            editorial2: val.editorial[1],
+        };
     });
+    return ejs_objects;
 };
 
 var options = {

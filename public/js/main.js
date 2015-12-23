@@ -6,7 +6,13 @@ requirejs.config({
 });
 
 require(['jquery'], function ($) {
-
-    console.log('nodejs - what is the version ?');
-
+    $(function () {
+        var ejs = $('#ejs-render').find('div.ejs-position');
+        $.each(ejs, function () {
+            var $contentPane = $(this).find('div.contentpane');
+            $('#' + $contentPane.text()).append(this);
+            $contentPane.remove();
+        });
+        $('#ejs-render').hide();
+    });
 });

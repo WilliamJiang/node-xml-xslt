@@ -43,31 +43,13 @@ router.get('/', function (req, res, next) {
 
     json_objects = facadeCtrl.process_modules(available_modules);
 
-    console.log('BEFORE RENDERING:', JSON.stringify(json_objects));
-    json_objects.title = 'WebMD: Better information. Better health.';
+    console.log('BEFORE RENDERING:', json_objects);
 
-    /**
-     * where to insert these tags?
-     *
-     <div class="editorial1">
-     <% include editorial1 %>
-     </div>
-     <div class="editorial2">
-     <% include editorial2 %>
-     </div>
-     <div class="linklist">
-     <% include linklist %>
-     </div>
-     */
+    var ejs_objects = webmdCtrl.setup_views(json_objects);
 
-    res.render('webmd', {
-        title: json_objects.title,
-        links: json_objects.ContentPane19.links,
-        editorial1: json_objects.ContentPane19.editorial[0],
-        editorial2: json_objects.ContentPane19.editorial[1],
-    });
+    res.render('webmd', ejs_objects);
+
     //res.render('webmd', json_objects);
-
     //res.render('webmd', json_objects, function(err, html) {
     //    console.log('html', html);
     //    res.send(html);
@@ -76,3 +58,29 @@ router.get('/', function (req, res, next) {
 });
 
 module.exports = router;
+
+
+/**
+ * TODO: where to insert these tags?
+
+    <div class="editorial1">
+        <% include editorial1 %>
+    </div>
+    <div class="editorial2">
+        <% include editorial2 %>
+    </div>
+    <div class="linklist">
+        <% include linklist %>
+    </div>
+
+    var editorial1 = new EJS({
+        url: '../views/editorial1.ejs'
+    }).render(json_objects.ContentPane19.editorial[0]);
+    var editorial2 = new EJS({
+        url: '../views/editorial2.ejs'
+    }).render(json_objects.ContentPane19.editorial[1]);
+    var linklist = new EJS({
+        url: '../views/linklist.ejs'
+    }).render(json_objects.ContentPane19.links);
+    console.log('+++++++++', editorial1, editorial2, linklist);
+ */
