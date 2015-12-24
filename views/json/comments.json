@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "author": "Pete Hunt",
+        "text": "This is one comment"
+    },
+    {
+        "id": 2,
+        "author": "Michael Owen",
+        "text": "This is sport comment"
+    },
+    {
+        "id": 3,
+        "author": "Jordan Walker",
+        "text": "This is *another* comment"
+    }
+]

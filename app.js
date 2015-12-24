@@ -13,8 +13,8 @@ var app = express();
 
 /** for ejs template: link_to, img_tag */
 require('express-helpers')(app);
-app.set('constants', require('./config/constants.js'));
-app.set('xml', path.join(__dirname, 'modules'));
+app.set('config', path.join(__dirname, 'config'));
+app.set('helpers', path.join(__dirname, 'helpers'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,12 +34,22 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', routes);
 app.use('/webmd', webmd);
+require('./routes/react')(app);
+
+app.use('*', function (req, res) {
+  var sent = {
+    query: req.query,
+    params: req.params,
+    body: req.body
+  };
+  res.status(200).json(sent);
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handlers
@@ -47,23 +57,23 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
 module.exports = app;
