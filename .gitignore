@@ -1,5 +1,5 @@
 node_modules/
-bower_components/
+components/
 .DS_Store
 .idea/
 npm-debug.log
