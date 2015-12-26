@@ -8,6 +8,8 @@ var _ = require('lodash');
 
 var routes = require('./routes/index');
 var webmd = require('./routes/webmd');
+var newsletter = require('./routes/newsletter');
+var react = require('./routes/react');
 
 var app = express();
 
@@ -15,6 +17,8 @@ var app = express();
 require('express-helpers')(app);
 app.set('config', path.join(__dirname, 'config'));
 app.set('helpers', path.join(__dirname, 'helpers'));
+// legacy for xsl:
+app.set('xml', path.join(__dirname, 'modules'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +38,14 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', routes);
 app.use('/webmd', webmd);
-require('./routes/react')(app);
+//app.use('/api/newsletter', newsletter);
+
+/**
+ * require('./routes/react')(app) for react routers:
+ * /comments
+ * /api/react/comments
+ */
+react(app);
 
 app.use('*', function (req, res) {
   var sent = {

@@ -49,3 +49,7 @@ http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/stagin
 * Controllers can be reusable, e.g.: editorial1.xml and editorial2.xml share same controller.
 * Test scripts include in test foler (jasmine for unit test)
 * Server-side rendering html-page with ejs template, better performance
+
+
+### Resouces
+* framework: https://github.com/petecoop/generator-express

@@ -29,39 +29,45 @@ webmdCtrl.extend(WebMD.options);
 
 router.get('/', function (req, res, next) {
 
-    var doc = fs.readFileSync(home, 'utf8');
+  var doc = fs.readFileSync(home, 'utf8');
 
-    var objs = parser.toJson(doc, {object: true});
+  var objs = parser.toJson(doc, {object: true});
 
-    var panes = webmdCtrl.webmd_page(objs);
+  var panes = webmdCtrl.webmd_page(objs);
 
-    var available_modules = [], json_objects = {};
+  var available_modules = [], json_objects = {};
 
-    if (Array.isArray(panes)) {
-        available_modules = webmdCtrl.get_available_modules(panes);
-    }
+  if (Array.isArray(panes)) {
+    available_modules = webmdCtrl.get_available_modules(panes);
+  }
 
-    json_objects = facadeCtrl.process_modules(available_modules);
+  json_objects = facadeCtrl.process_modules(available_modules);
 
-    console.log('BEFORE RENDERING:', json_objects);
-    //console.log(available_modules);
+  console.log('BEFORE RENDERING:', json_objects);
+  //console.log(available_modules);
 
-    var ejs_html = webmdCtrl.setup_views_1(json_objects);
+  var ejs_html = webmdCtrl.setup_views_1(json_objects);
 
-    var contentPane = _.keys(json_objects).join('');
+  var contentPane = _.keys(json_objects).join('');
 
-    //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
-    //1. res.render('webmd', json_objects);
-    //2. res.status(200).send(html);
+  //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
+  //1. res.render('webmd', json_objects);
+  //2. res.status(200).send(html);
 
-    res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+  res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
 
-        var $ = cheerio.load(html);
+    var $ = cheerio.load(html);
 
-        $('#' + contentPane).append(ejs_html);
+    $('#' + contentPane).append(ejs_html);
 
-        res.send($.html());
-    });
+    res.send($.html());
+  });
 });
+
+router.get('/linklist', require('./v1/linklist'));
+router.get('/editorial', require('./v1/editorial'));
+router.get('/editorial1', require('./v1/editorial1'));
+router.get('/editorial2', require('./v1/editorial2'));
+router.get('/xsl', require('./v1/xsl'));
 
 module.exports = router;
