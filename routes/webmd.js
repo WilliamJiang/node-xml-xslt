@@ -54,7 +54,7 @@ router.get('/', function (req, res, next) {
   //1. res.render('webmd', json_objects);
   //2. res.status(200).send(html);
 
-  res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+  res.render('index', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
 
     var $ = cheerio.load(html);
 

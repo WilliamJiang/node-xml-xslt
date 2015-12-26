@@ -67,6 +67,7 @@ function async_fetch_xmls(res) {
 
 
 module.exports = {
+
   getXml: function (req, res) {
     var module = req.params.xmlId;
     var xml = CONSTANTS.xmlXsl.xml_local[module];

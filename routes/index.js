@@ -54,7 +54,7 @@ router.get('/', function (req, res, next) {
   //1. res.render('webmd', json_objects);
   //2. res.status(200).send(html);
 
-  res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+  res.render('index', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
 
     var $ = cheerio.load(html);
 
@@ -63,5 +63,28 @@ router.get('/', function (req, res, next) {
     res.send($.html());
   });
 });
+
+/**
+ * for legacy and individual development and debug
+ */
+var linklist = require('./v1/linklist');
+var editorial = require('./v1/editorial');
+var editorial1 = require('./v1/editorial1');
+var editorial2 = require('./v1/editorial2');
+
+router.get('/linklist', linklist.get_local_linklist);
+router.get('/linklist_remote', linklist.get_remote_linklist);
+
+router.get('/editorial1', editorial1.get_local_editorial);
+router.get('/editorial1_remote', editorial1.get_remote_editorial);
+
+router.get('/editorial2', editorial2.get_local_editorial);
+router.get('/editorial2_remote', editorial2.get_remote_editorial);
+
+
+router.get('/xsl', require('./v1/xsl'));
+router.get('/all3', require('./v1/xsl'));
+
+router.get('/editorial/:xmlId', editorial.getXml);
 
 module.exports = router;

@@ -6,12 +6,12 @@ var request = require('request');
  *  urlSubscribe2:
  *  'https://www' + webmd.url.getEnv() + '.webmd.com/api/reg/regapi.svc/json2/subscribe2',
  *  https://www.perf.webmd.com/api/reg/regapi.svc/json2/subscribe2
- *  /api/newsletter/perf, /api/newsletter/staging...
+ *  e.g.: /api/newsletter/perf, /api/newsletter/staging...
  */
 //router.param('env', /^\w+$/);
 
-router.post('/:env', function (req, res) {
-
+router.use('/:env', function (req, res) {
+  var env = req.params.env;
   /**
    * in newsletter -> service.js (line 408):
    * subscribe: function(settings) {
@@ -19,7 +19,7 @@ router.post('/:env', function (req, res) {
        return this.subscribe_json(settings);
      }
    */
-  var url2Subscribe = 'https://www' + req.params.env + '.webmd.com/api/reg/regapi.svc/json2/subscribe2';
+  var url2Subscribe = 'https://www.' + req.params.env + '.webmd.com/api/reg/regapi.svc/json2/subscribe2';
   var subscribeData = req.body;
 
   request.post({
@@ -41,3 +41,5 @@ router.use('/proxy', function (req, res) {
   var url = req.url.replace('/?url=', '');
   req.pipe(request(url)).pipe(res);
 });
+
+module.exports = router;

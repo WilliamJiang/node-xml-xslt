@@ -37,13 +37,12 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/', routes);
 app.use('/webmd', webmd);
-//app.use('/api/newsletter', newsletter);
 
 /**
  * require('./routes/react')(app) for react routers:
- * /comments
- * /api/react/comments
+ * /comments,  /api/react/comments
  */
+app.use('/api/newsletter', newsletter);
 react(app);
 
 //app.get('/favicon.ico', function(req, res){});

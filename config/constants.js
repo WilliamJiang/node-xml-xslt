@@ -2,12 +2,15 @@ var path = require('path');
 var rootDir = path.dirname();
 var modules = rootDir + '/modules/';
 var helpers = rootDir + '/helpers/';
+var views = rootDir + '/views/';
 
 var wxml = {
   url: 'http://www.webmd.com',
   home: modules + 'home.xml',
   index: modules + 'index.xml',
-  xsl: helpers + 'xsl/'
+  folder: modules,
+  xsl: helpers + 'xsl/',
+  ejs: views + 'v1/'
 };
 
 /**

@@ -102,9 +102,9 @@ WebMD.prototype.get_available_modules = function (panes) {
     return available_modules;
 };
 
-/**
+/** Deprecated:
  * this function needs help of jQuery.ready():
- * add <%- include .ejs -%> at bottom of webmd.ejs.
+ * add <%- include .ejs -%> at bottom of index.ejs.
  */
 WebMD.prototype.setup_views = function (json_objects) {
     var ejs_objects = null;
@@ -130,7 +130,7 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
     _.forEach(json_objects, function (val, key) {
 
         if (Array.isArray(val.editorial[0]) || (typeof val.editorial[0]==='object')) {
-            templateString = fs.readFileSync('views/editorial1.ejs', 'utf-8');
+            templateString = fs.readFileSync(CONSTANTS.wxml.ejs + 'editorial1.ejs', 'utf-8');
 
             html += ejs.render(templateString, {
                 ContentPane: key,
@@ -139,7 +139,7 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
         }
 
         if (Array.isArray(val.editorial[1]) || (typeof val.editorial[1]==='object')) {
-            var templateString = fs.readFileSync('views/editorial2.ejs', 'utf-8');
+            var templateString = fs.readFileSync(CONSTANTS.wxml.ejs + 'editorial2.ejs', 'utf-8');
             html += ejs.render(templateString, {
                 ContentPane: key,
                 editorial2: val.editorial[1]
@@ -147,7 +147,7 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
         }
 
         if (Array.isArray(val.links)) {
-            var templateString = fs.readFileSync('views/linklist.ejs', 'utf-8');
+            var templateString = fs.readFileSync(CONSTANTS.wxml.ejs + 'linklist.ejs', 'utf-8');
             html += ejs.render(templateString, {
                 ContentPane: key,
                 links: val.links,
@@ -162,7 +162,7 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
  */
 WebMD.prototype.dynamic_update_template = function (ContentPane, snippet) {
 
-    var templateFile = 'views/webmd.ejs';
+    var templateFile = CONSTANTS.wxml.ejs + '../index.ejs';
 
     var $ = cheerio.load(fs.readFileSync(templateFile, 'utf8'));
 
