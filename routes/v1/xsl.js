@@ -4,45 +4,33 @@
  * 1. use xsl to parse xml
  * 2. put generated Doc-data to <div class="contentPane12"></div>
  */
-var express = require('express');
-var router = express.Router();
-
 var fs = require('fs');
 var libxslt = require('libxslt');
 var libxmljs = require('libxmljs');
+var CONSTANTS = require('../../config/constants');
+var _ = require('lodash');
 
-var webmd = webmd || {};
-webmd.title = 'WebMD - Better information. Better health.';
+function xslt_process(xml, xsl) {
 
+  var doc = fs.readFileSync(xml, 'utf8');
 
-function xsl_process(xml, xsl) {
+  var stylesheetString = fs.readFileSync(xsl, 'utf8');
 
-    var doc = fs.readFileSync(xml, 'utf8');
+  var stylesheet = libxslt.parse(stylesheetString);
 
-    var stylesheetString = fs.readFileSync(xsl, 'utf8');
+  var result = stylesheet.apply(doc);
 
-    var stylesheet = libxslt.parse(stylesheetString);
-
-    var result = stylesheet.apply(doc);
-
-    return result;
+  return result;
 }
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
+module.exports = function (req, res, next) {
 
-    var linklist = xsl_process('xml/linklist.xml', 'xsl/linklist.xsl');
+  var e1 = xslt_process(CONSTANTS.xmlXsl.xml_local.editorial1, CONSTANTS.xmlXsl.xsl.editorial1);
 
-    var module1 = xsl_process('xml/module1.xml', 'xsl/module1.xsl');
+  var e2 = xslt_process(CONSTANTS.xmlXsl.xml_local.editorial2, CONSTANTS.xmlXsl.xsl.editorial2);
 
-    var module2 = xsl_process('xml/module2.xml', 'xsl/module2.xsl');
+  var ll = xslt_process(CONSTANTS.xmlXsl.xml_local.linklist, CONSTANTS.xmlXsl.xsl.linklist);
 
-    res.render('index', {
-        title: webmd.title,
-        module1: module1,
-        module2: module2,
-        linklist: linklist
-    });
-});
 
-module.exports = router;
+  res.send(e1 + e2 + ll);
+};

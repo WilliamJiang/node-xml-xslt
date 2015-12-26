@@ -17,8 +17,7 @@ var app = express();
 require('express-helpers')(app);
 app.set('config', path.join(__dirname, 'config'));
 app.set('helpers', path.join(__dirname, 'helpers'));
-// legacy for xsl:
-app.set('xml', path.join(__dirname, 'modules'));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,14 +46,15 @@ app.use('/webmd', webmd);
  */
 react(app);
 
-app.use('*', function (req, res) {
-  var sent = {
-    query: req.query,
-    params: req.params,
-    body: req.body
-  };
-  res.status(200).json(sent);
-});
+//app.get('/favicon.ico', function(req, res){});
+//app.use('*', function (req, res) {
+//  var sent = {
+//    query: req.query,
+//    params: req.params,
+//    body: req.body
+//  };
+//  res.status(200).json(sent);
+//});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

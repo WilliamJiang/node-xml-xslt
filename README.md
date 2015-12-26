@@ -51,5 +51,17 @@ http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/stagin
 * Server-side rendering html-page with ejs template, better performance
 
 
+### Useful URL:
+* localhost:3000/webmd
+* localhost:3000/webmd/linklist
+* localhost:3000/webmd/editorial1
+* localhost:3000/webmd/editorial2
+* localhost:3000/webmd/editorial
+* localhost:3000/webmd/xsl
+* localhost:3000/webmd/all3
+* localhost:3000/webmd/(:editorial1 | :editorial2 | :linklist)
+
+
+
 ### Resouces
 * framework: https://github.com/petecoop/generator-express
