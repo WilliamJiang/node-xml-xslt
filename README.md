@@ -52,7 +52,7 @@ http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/stagin
 
 
 ### Useful URL:
-* localhost:3000
+* localhost:3000/
 * localhost:3000/webmd
 * localhost:3000/webmd/linklist
 * localhost:3000/webmd/editorial1
@@ -61,8 +61,7 @@ http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/stagin
 * localhost:3000/webmd/xsl
 * localhost:3000/webmd/all3
 * localhost:3000/webmd/(:editorial1 | :editorial2 | :linklist)
-
-* localhost:3000/api/newsletter
+* localhost:3000/api/newsletter/(:perf | :staging | :product)
 * localhost:3000/comments
 * localhost:3000/api/react/comments
 

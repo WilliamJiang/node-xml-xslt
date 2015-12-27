@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * william added for extension.
- * app.use('/data', express.static(config.root + '/data'));
+ * app.use('/data', express.static(config.root + '/modules'));
  */
 app.use('/', routes);
 app.use('/webmd', webmd);
