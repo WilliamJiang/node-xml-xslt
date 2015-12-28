@@ -11,6 +11,7 @@ var webmd = require('./routes/webmd');
 var newsletter = require('./routes/newsletter');
 var react = require('./routes/react');
 
+var cors = require('cors');
 var app = express();
 
 /** for ejs template: link_to, img_tag */
@@ -42,8 +43,11 @@ app.use('/webmd', webmd);
  * require('./routes/react')(app) for react routers:
  * /comments,  /api/react/comments
  */
-app.use('/api/newsletter', newsletter);
 react(app);
+
+app.use(cors());
+//localhost:3000/api/newsletter/perf
+app.use('/api/newsletter', newsletter);
 
 //app.get('/favicon.ico', function(req, res){});
 //app.use('*', function (req, res) {
