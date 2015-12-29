@@ -1,17 +1,27 @@
 var Timer = React.createClass({
-  getInitialState: function() {
+  displayName: '',
+  minxins: [],
+  statics: {},
+  propTypes: {},
+  getDefaultProps: function () {
+  },
+  getInitialState: function () {
     return {secondsElapsed: 0};
   },
-  tick: function() {
+  componentWillMount: function () {
+  },
+  tick: function () {
     this.setState({secondsElapsed: this.state.secondsElapsed + 1});
   },
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.interval = setInterval(this.tick, 1000);
   },
-  componentWillUnmount: function() {
+  componentWillUnmount: function () {
     clearInterval(this.interval);
   },
-  render: function() {
+  handleClick: function () {
+  },
+  render: function () {
     return (
       <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
     );
@@ -22,11 +32,11 @@ ReactDOM.render(<Timer />, document.getElementById('timer'));
 
 
 ///////////////
-function log(str){
-  document.getElementById('log').innerHTML+='<p>'+str+'</p>';
+function log(str) {
+  document.getElementById('log').innerHTML += '<p>' + str + '</p>';
 }
-document.getElementById('clear').onclick=function(){
-  document.getElementById('log').innerHTML='';
+document.getElementById('clear').onclick = function () {
+  document.getElementById('log').innerHTML = '';
 };
 
 var Test = React.createClass({
@@ -44,12 +54,12 @@ var Test = React.createClass({
     });
   },
 
-  shouldComponentUpdate(nextProps,nextState){
+  shouldComponentUpdate(nextProps, nextState){
     log('shouldComponentUpdate');
     return true;
   },
 
-  componentWillUpdate(nextProps,nextState){
+  componentWillUpdate(nextProps, nextState){
     log('componentWillUpdate');
   },
 
@@ -66,11 +76,11 @@ var Test = React.createClass({
     log('componentDidMount');
   },
 
-  componentDidUpdate(prevProps,prevState) {
+  componentDidUpdate(prevProps, prevState) {
     log('componentDidUpdate');
   },
 
-  componentWillUnmount(prevProps,prevState) {
+  componentWillUnmount(prevProps, prevState) {
     log('componentWillUnmount');
   }
 });
@@ -79,13 +89,13 @@ var Test = React.createClass({
 var Hello = React.createClass({
   getInitialState() {
     return {
-      value:1,
-      destroyed:false
+      value: 1,
+      destroyed: false
     };
   },
   increase() {
     this.setState({
-      value: this.state.value+1
+      value: this.state.value + 1
     });
   },
   destroy() {
@@ -93,8 +103,8 @@ var Hello = React.createClass({
       destroyed: true
     });
   },
-  render: function() {
-    if(this.state.destroyed){
+  render: function () {
+    if (this.state.destroyed) {
       return null;
     }
     return <div>

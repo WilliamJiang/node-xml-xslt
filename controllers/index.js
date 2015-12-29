@@ -162,7 +162,7 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
  */
 WebMD.prototype.dynamic_update_template = function (ContentPane, snippet) {
 
-    var templateFile = CONSTANTS.wxml.ejs + '../webmd.ejs';
+    var templateFile = CONSTANTS.wxml.ejs + '../index.ejs';
 
     var $ = cheerio.load(fs.readFileSync(templateFile, 'utf8'));
 

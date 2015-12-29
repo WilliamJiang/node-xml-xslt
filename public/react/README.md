@@ -2,6 +2,8 @@
 ```sh
   $ babel --presets react test.js -o build/test.js
   $ babel --presets react comments.js -o build/comments.js
+  $ cd public/react
+  $ babel --presets react webmd.js -o build/webmd.js
 ```
 
 ### Pre-requirements
