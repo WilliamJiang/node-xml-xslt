@@ -36,8 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
  * william added for extension.
  * app.use('/data', express.static(config.root + '/modules'));
  */
-app.use('/', routes);
-app.use('/webmd', webmd);
+app.use('/', routes); //index.xml
+app.use('/v1', v1);   //v1.xml
+app.use('/webmd', webmd); //webmd.ejs
 
 /**
  * require('./routes/react')(app) for react routers:
@@ -49,15 +50,6 @@ app.use(cors());
 //localhost:3000/api/newsletter/perf
 app.use('/api/newsletter', newsletter);
 
-//app.get('/favicon.ico', function(req, res){});
-//app.use('*', function (req, res) {
-//  var sent = {
-//    query: req.query,
-//    params: req.params,
-//    body: req.body
-//  };
-//  res.status(200).json(sent);
-//});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -65,8 +57,6 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// error handlers
 
 // development error handler
 // will print stacktrace
@@ -88,6 +78,15 @@ app.use(function (err, req, res, next) {
     message: err.message,
     error: {}
   });
+});
+
+app.use('*', function (req, res) {
+  var sent = {
+    query: req.query,
+    params: req.params,
+    body: req.body
+  };
+  res.status(200).json(sent);
 });
 
 module.exports = app;

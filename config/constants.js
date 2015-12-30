@@ -6,7 +6,7 @@ var views = rootDir + '/views/';
 
 var wxml = {
   url: 'http://www.webmd.com',
-  home: modules + 'home.xml',
+  home: modules + 'v1.xml',
   index: modules + 'index.xml',
   folder: modules,
   xsl: helpers + 'xsl/',
