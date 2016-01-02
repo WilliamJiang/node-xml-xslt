@@ -53,6 +53,12 @@ router.use('/:env', function (req, res) {
 
 // http://localhost:3000/proxy?url=http://google.com
 router.use('/proxy', function (req, res) {
+
+  // config credentials, host and port
+  var proxyUrl =  "http://" + user + ":" + password + "@" + host + ":" + port;
+  var proxiedRequest = request.defaults({ 'proxy': proxyUrl });
+  proxiedRequest.get('http://google.com', function(err, response, body) {});
+
   var url = req.url.replace('/?url=', '');
   req.pipe(request(url)).pipe(res);
 });

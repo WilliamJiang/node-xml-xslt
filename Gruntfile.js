@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 
   var reloadPort = 35729, files;
 
+  // 'public/react/build/webmd.js': ['public/react/webmd.js','public/react/test.js']
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     develop: {
@@ -58,8 +59,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           'expand': true,
-          'src': ['public/react/webmd*.js'],
-          'dest': 'public/build/webmd.js',
+          'cwd': 'public/react/',
+          'src': ['webmd*.js'],
+          'dest': 'public/react/build/',
           'ext': '.js'
         }]
       }
@@ -84,8 +86,6 @@ module.exports = function (grunt) {
       });
     }, 500);
   });
-
-  grunt.registerTask('babel', ['babel']);
 
   grunt.registerTask('default', [
     'develop',

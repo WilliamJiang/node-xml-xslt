@@ -4,3 +4,5 @@ components/
 .DS_Store
 .idea/
 npm-debug.log
+public/react/build/
+backup/

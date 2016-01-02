@@ -30,16 +30,20 @@ var Timer = React.createClass({
 
 ReactDOM.render(<Timer />, document.getElementById('timer'));
 
-
 ///////////////
 function log(str) {
   document.getElementById('log').innerHTML += '<p>' + str + '</p>';
 }
+
 document.getElementById('clear').onclick = function () {
   document.getElementById('log').innerHTML = '';
 };
 
 var Test = React.createClass({
+  getState() {
+
+  },
+
   getInitialState() {
     log('getInitialState');
     return {
@@ -85,7 +89,6 @@ var Test = React.createClass({
   }
 });
 
-
 var Hello = React.createClass({
   getInitialState() {
     return {
@@ -118,4 +121,3 @@ var Hello = React.createClass({
 });
 
 ReactDOM.render(<Hello />, document.getElementById('test'));
-
