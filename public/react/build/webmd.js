@@ -6,7 +6,7 @@ String.prototype.capitalizeFirstLetter = function () {
 
 function createMarkup() {
   return { __html: 'First &middot; Second' };
-}
+};
 
 var WebMD = React.createClass({
   displayName: 'WebMD',
@@ -70,7 +70,7 @@ var WebMD = React.createClass({
         { className: 'tab-content' },
         this.state.items.map(function (tab, i) {
           return React.createElement('div', { role: 'tabpanel', className: i === 0 ? "tab-pane active" : "tab-pane", id: tab,
-            key: 'tabpanel-' + i, dangerouslySetInnerHTML: createMarkup() });
+            key: 'tabpanel-' + i });
         }, this)
       )
     );

@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * app.use('/data', express.static(config.root + '/modules'));
  */
 app.use('/', routes); //index.xml
-app.use('/v1', v1);   //v1.xml
+app.use('/v1', webmd);   //v1.xml
 app.use('/webmd', webmd); //webmd.ejs
 
 /**

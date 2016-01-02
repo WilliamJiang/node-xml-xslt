@@ -59,7 +59,7 @@ var WebMD = React.createClass({
           {this.state.items.map(function (tab, i) {
             return (
               <div role="tabpanel" className={i===0 ? "tab-pane active" : "tab-pane"} id={tab}
-                   key={'tabpanel-' + i} dangerouslySetInnerHTML={createMarkup()}></div>
+                   key={'tabpanel-' + i}></div>
             );
           }, this)}
         </div>
