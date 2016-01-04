@@ -4,16 +4,16 @@
             <div class="singleheader">
                 <div class="slide">
                     <ul class="listHorizontal">
-                        <% for (var i = 0; i < editorial1.listHorizontal.length; i++) { %>
+                        <% for (var i = 0; i < editorial.listHorizontal.length; i++) { %>
                         <li class="thumb video">
                             <a class="block img clearfix" data-metrics-link="1"
-                               href="<%= editorial1.listHorizontal[i].href %>">
-                                <img src="<%= editorial1.listHorizontal[i].src %>" alt=""/>
+                               href="<%= editorial.listHorizontal[i].href %>">
+                                <img src="<%= editorial.listHorizontal[i].src %>" alt=""/>
                             </a>
                             <a class="info clearfix" data-metrics-link="1"
-                               href="<%= editorial1.listHorizontal[i].href %>">
-                                <h4><%= editorial1.listHorizontal[i].h4 %></h4>
-                                <div class="text"><%= editorial1.listHorizontal[i].text %></div>
+                               href="<%= editorial.listHorizontal[i].href %>">
+                                <h4><%= editorial.listHorizontal[i].h4 %></h4>
+                                <div class="text"><%= editorial.listHorizontal[i].text %></div>
                             </a>
                         </li>
                         <% } %>
@@ -22,13 +22,13 @@
             </div>
             <div class="thumbs">
                 <ul>
-                    <% for (var i = 0; i < editorial1.thumbs.length; i++) { %>
+                    <% for (var i = 0; i < editorial.thumbs.length; i++) { %>
                     <li class="video">
-                        <a href="<%= editorial1.thumbs[i].href %>">
-                            <img src="<%= editorial1.thumbs[i].src %>" alt="butter melting in pan"/>
+                        <a href="<%= editorial.thumbs[i].href %>">
+                            <img src="<%= editorial.thumbs[i].src %>" alt="butter melting in pan"/>
                             <div class="thumbtext">
-                                <div class="text"><%= editorial1.thumbs[i].text %></div>
-                                <div class="action"><%= editorial1.thumbs[i].action %></div>
+                                <div class="text"><%= editorial.thumbs[i].text %></div>
+                                <div class="action"><%= editorial.thumbs[i].action %></div>
                             </div>
                         </a>
                     </li>

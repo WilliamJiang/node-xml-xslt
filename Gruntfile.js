@@ -1,8 +1,8 @@
-'use strict';
-
-var request = require('request');
-
 module.exports = function (grunt) {
+  'use strict';
+
+  var request = require('request');
+
   // show elapsed time at the end
   require('time-grunt')(grunt);
   // load all grunt tasks
@@ -12,6 +12,7 @@ module.exports = function (grunt) {
 
   // 'public/react/build/webmd.js': ['public/react/webmd.js','public/react/test.js']
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
     develop: {
       server: {
@@ -50,6 +51,27 @@ module.exports = function (grunt) {
         options: {
           livereload: reloadPort
         }
+      }
+    },
+    env: {
+      all: {
+        NODE_ENV: process.env.NODE_ENV || 'development'
+      }
+    },
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+      },
+      all: {
+        src: ''
+      }
+    },
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc'
+      },
+      all: {
+        src: ''
       }
     },
     babel: {
@@ -91,4 +113,8 @@ module.exports = function (grunt) {
     'develop',
     'watch'
   ]);
+
+  // Lint task(s).
+  grunt.registerTask('lint', ['jshint', 'csslint']);
+
 };

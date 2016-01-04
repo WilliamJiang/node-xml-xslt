@@ -16,16 +16,15 @@ var CONSTANTS = require(dir + 'config/constants');
 /* locally: modules/  */
 var home = CONSTANTS.wxml.home;
 
-var defaults = CONSTANTS.webmd.defaults;
-
-var webmdCtrl = new WebMD.WebMDCtrl(defaults);
-
-var facadeCtrl = new Facade.FacadeCtrl(defaults);
-
 /**
- * and extend settings: 1 from root-constructor, 1 from itself.
+ * TODO: what do you want to inject ?
  */
-webmdCtrl.extend(WebMD.options);
+var defaults = {};
+
+var webmdCtrl = new WebMD(defaults);
+
+var facadeCtrl = new Facade(defaults);
+
 
 router.get('/', function (req, res, next) {
 

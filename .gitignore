@@ -6,3 +6,4 @@ components/
 npm-debug.log
 public/react/build/
 backup/
+react/

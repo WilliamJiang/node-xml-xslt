@@ -24,7 +24,7 @@
             <wbmd_c_channel_ids_group />
             <wbmd_program_group />
             <wbmd_pb_asset_css path="/webmd/PageBuilder_Assets/CSS/EditorialModule/Conversations Blog/Default_091e9c5e80f4ce8d.css" object_type="wbmd_pb_css" chronic_id="091e9c5e80f4ce8d" />
-            <wbmd_pb_module_xsl path="/webmd/PageBuilder_Assets/XSL/EditorialModule/conversations-blog_091e9c5e80f4ce8c.xsl" object_type="wbmd_pb_xsl" chronic_id="091e9c5e80f4ce8c" />
+            <wbmd_pb_module_xsl path="editorial2.ejs" object_type="wbmd_pb_xsl" chronic_id="091e9c5e80f4ce8c" />
             <wbmd_pb_moduledataschema path="/webmd_uk/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
             <wbmd_pb_moduledataschema path="/webmd/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd" object_type="wbmd_pb_schemas" chronic_id="091e9c5e80005117" />
             <wbmd_pb_owner_page_id path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Pages/Homepage 2014_091e9c5e80eff7b3/page_Homepage 2014_091e9c5e80eff7b3.xml" object_type="wbmd_pb_page" chronic_id="091e9c5e80eff7b3" />

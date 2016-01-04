@@ -59,8 +59,8 @@
                 <webmd_page>
                     <page_settings>
                         <wbmd_pb_pagetemplate
-                                path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Templates/Harmony Homepage Template_091e9c5e810d5260"
-                                object_type="wbmd_pb_template" directive="friendlyurl" chronic_id="091e9c5e810d5260"/>
+                            path="/webmd/PageBuilder_Assets/scopemaps/WebMD Consumer/Templates/Harmony Homepage Template_091e9c5e810d5260"
+                            object_type="wbmd_pb_template" directive="friendlyurl" chronic_id="091e9c5e810d5260"/>
                         <webmd_is_ext_searchable>1</webmd_is_ext_searchable>
                         <gated_username/>
                         <gated>0</gated>
@@ -94,21 +94,38 @@
                             <pane name="ContentPane21">
                             </pane>
                             <pane name="ContentPane19">
-                                <module chronic_id="091e9c5e80f046b5" class="EditorialModule" r_object_id="091e9c5e8131b989" path="editorial1.xml" />
+                                <module chronic_id="091e9c5e80f046b5" class="EditorialModule"
+                                        r_object_id="091e9c5e8131b989" path="editorial1.xml"/>
+                                <module chronic_id="091e9c5e80f08908" class="LinkListModule"
+                                        r_object_id="091e9c5e81165b2c" path="linklist.xml"/>
                             </pane>
                             <pane name="ContentPane55">
-                                <module chronic_id="091e9c5e80f4bedb" class="EditorialModule" r_object_id="091e9c5e81165b24" path="editorial2.xml" />
+                                <module chronic_id="091e9c5e80f4bedb" class="EditorialModule"
+                                        r_object_id="091e9c5e81165b24" path="editorial2.xml"/>
                             </pane>
                             <pane name="ContentPane12">
-                                <module chronic_id="091e9c5e80f08908" class="LinkListModule" r_object_id="091e9c5e81165b2c" path="linklist.xml"/>
+                                <module chronic_id="091e9c5e80f08908" class="LinkListModule"
+                                        r_object_id="091e9c5e81165b2c" path="linklist.xml"/>
                             </pane>
                             <pane name="ContentPane46">
+                                <module chronic_id="091e9c5e80f046b5" class="EditorialModule"
+                                        r_object_id="091e9c5e8131b989" path="editorial1.xml"/>
+                                <module chronic_id="091e9c5e80f4bedb" class="EditorialModule"
+                                        r_object_id="091e9c5e81165b24" path="editorial2.xml"/>
+                                <module chronic_id="091e9c5e80f08908" class="LinkListModule"
+                                        r_object_id="091e9c5e81165b2c" path="linklist.xml"/>
                             </pane>
                             <pane name="ContentPane39">
                             </pane>
                             <pane name="ContentPane40">
                             </pane>
                             <pane name="ContentPane28">
+                                <module chronic_id="091e9c5e80f046b5" class="EditorialModule"
+                                        r_object_id="091e9c5e8131b989" path="editorial1.xml"/>
+                                <module chronic_id="091e9c5e80f08908" class="LinkListModule"
+                                        r_object_id="091e9c5e81165b2c" path="linklist.xml"/>
+                                <module chronic_id="091e9c5e80f4bedb" class="EditorialModule"
+                                        r_object_id="091e9c5e81165b24" path="editorial2.xml"/>
                             </pane>
                         </panes>
                         <javascripts>

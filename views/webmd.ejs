@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WebMD NodeJS React App Testing</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
@@ -111,13 +111,5 @@
 <script src="components/react-bootstrap/react-bootstrap.min.js"></script>
 <script data-main="js/main" src="components/requirejs/require.js"></script>
 <script src="react/build/webmd.js"></script>
-<script type="text/jsx">
-    webMDOptions.getState(function (options) {
-        ReactDOM.render(
-            <Demo options={options}/>,
-            document.getElementById('demo')
-        );
-    });
-</script>
 </body>
 </html>

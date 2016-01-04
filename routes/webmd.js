@@ -16,16 +16,9 @@ var CONSTANTS = require(dir + 'config/constants');
 /* locally: modules/  */
 var home = CONSTANTS.wxml.home;
 
-var defaults = CONSTANTS.webmd.defaults;
+var webmdCtrl = new WebMD();
 
-var webmdCtrl = new WebMD.WebMDCtrl(defaults);
-
-var facadeCtrl = new Facade.FacadeCtrl(defaults);
-
-/**
- * and extend settings: 1 from root-constructor, 1 from itself.
- */
-webmdCtrl.extend(WebMD.options);
+var facadeCtrl = new Facade();
 
 router.get('/', function (req, res, next) {
 
