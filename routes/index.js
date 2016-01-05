@@ -41,11 +41,8 @@ router.get('/', function (req, res, next) {
 
   json_objects = facadeCtrl.process_modules(available_modules);
 
-  console.log('Avalibale Modules:', available_modules);
-  console.log('BEFORE RENDERING:', json_objects);
-
-  //var css = facadeCtrl.dynamic_update_template(ejs_html);
-
+  console.log('Available Modules:', available_modules);
+  console.log('Before Rendering:', json_objects);
 
   var snippets = facadeCtrl.setup_view(json_objects);
 
@@ -57,13 +54,12 @@ router.get('/', function (req, res, next) {
       $('#' + htmlObj.contentPane).append(htmlObj.html);
     });
 
-
     // more than webmd:
     var cssFiles = CONSTANTS.cssFiles.map(function (cssFile) {
       return '<link rel="stylesheet" href="' + cssFile + '"/>';
     }).join('\n');
 
-    console.log(cssFiles);
+    //console.log(cssFiles);
     $('head').append(cssFiles);
 
     res.send($.html());
