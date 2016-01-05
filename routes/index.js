@@ -16,15 +16,9 @@ var CONSTANTS = require(dir + 'config/constants');
 /* locally: modules/  */
 var home = CONSTANTS.wxml.home;
 
-/**
- * TODO: what do you want to inject ?
- */
-var defaults = {};
+var webmdCtrl = new WebMD();
 
-var webmdCtrl = new WebMD(defaults);
-
-var facadeCtrl = new Facade(defaults);
-
+var facadeCtrl = new Facade();
 
 router.get('/', function (req, res, next) {
 
@@ -36,28 +30,41 @@ router.get('/', function (req, res, next) {
 
   var available_modules = [], json_objects = {};
 
+  /**
+   * find all <pane>s, search:
+   * 1. <module /> exists?
+   * 2. if <module/> exists: collect its property: class, path
+   */
   if (Array.isArray(panes)) {
     available_modules = webmdCtrl.get_available_modules(panes);
   }
 
   json_objects = facadeCtrl.process_modules(available_modules);
 
+  console.log('Avalibale Modules:', available_modules);
   console.log('BEFORE RENDERING:', json_objects);
-  //console.log(available_modules);
 
-  var ejs_html = webmdCtrl.setup_views_1(json_objects);
+  //var css = facadeCtrl.dynamic_update_template(ejs_html);
 
-  var contentPane = _.keys(json_objects).join('');
 
-  //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
-  //1. res.render('webmd', json_objects);
-  //2. res.status(200).send(html);
+  var snippets = facadeCtrl.setup_view(json_objects);
 
-  res.render('index', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+  res.render('index', {title: CONSTANTS.xmlXsl.title}, function (err, html) {
 
     var $ = cheerio.load(html);
 
-    $('#' + contentPane).append(ejs_html);
+    _.forEach(snippets, function (htmlObj) {
+      $('#' + htmlObj.contentPane).append(htmlObj.html);
+    });
+
+
+    // more than webmd:
+    var cssFiles = CONSTANTS.cssFiles.map(function (cssFile) {
+      return '<link rel="stylesheet" href="' + cssFile + '"/>';
+    }).join('\n');
+
+    console.log(cssFiles);
+    $('head').append(cssFiles);
 
     res.send($.html());
   });

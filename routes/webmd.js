@@ -41,18 +41,18 @@ router.get('/', function (req, res, next) {
 
   json_objects = facadeCtrl.process_modules(available_modules);
 
-  console.log('Avalibale Modules:', available_modules);
-  console.log('BEFORE RENDERING:', json_objects);
+  console.log('(1) Avalibale Modules:', available_modules);
+  console.log('(2) Before Rendering - json_objects:', json_objects);
+
+  //var css = facadeCtrl.dynamic_update_template(ejs_html);
+
 
   var snippets = facadeCtrl.setup_view(json_objects);
+  console.log('(3) Rendered contentPanes:', snippets);
 
-  res.render('webmd', {
-    title: CONSTANTS.xmlXsl.title
-  }, function (err, html) {
+  res.render('webmd', {title: CONSTANTS.xmlXsl.title}, function (err, html) {
 
     var $ = cheerio.load(html);
-
-    //var css = facadeCtrl.dynamic_update_template(contentPane, ejs_html);
 
     _.forEach(snippets, function (htmlObj) {
       $('#' + htmlObj.contentPane).append(htmlObj.html);

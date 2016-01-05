@@ -1,4 +1,8 @@
 /**
+ * http://dmshare.sea1.webmd.com/publishing/consumer/publishing/con_dtm_scst/staging/webmd/PageBuilder_Assets/schemas/module_schemas/EditorialModule.xsd
+ */
+
+/**
  * TODO: keep the constants to MongoDB ?
  */
 var path = require('path');
@@ -39,8 +43,17 @@ var xmlXsl = {
   }
 };
 
+var css_ary = [
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Site/WebMD_091e9c5e8004a22454.css',
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Flexible_Layout_CSS/Runtime/2_column_layout_harmony22.css',
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS_Aggr/Harmony Flexible Layout Base Template_091e9c5e80edcfbd/template_Harmony Flexible Layout Base Template_091e9c5e80edcfbd_tmodules_css_537.css',
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Navigation/Masthead/masthead5.css',
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Template/Harmony Flexible Layout Base Template_091e9c5e80fd052627.css',
+  'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Template/Brandcast Harmony Template_091e9c5e8100429f26.css'
+];
 
 module.exports = {
   wxml: wxml,
-  xmlXsl: xmlXsl
+  xmlXsl: xmlXsl,
+  cssFiles: css_ary
 };
