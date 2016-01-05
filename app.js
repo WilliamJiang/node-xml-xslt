@@ -8,20 +8,24 @@ var _ = require('lodash');
 
 var routes = require('./routes/index');
 var webmd = require('./routes/webmd');
+var newsletter = require('./routes/newsletter');
+var react = require('./routes/react');
 
+var cors = require('cors');
 var app = express();
 
 /** for ejs template: link_to, img_tag */
 require('express-helpers')(app);
-app.set('constants', require('./config/constants.js'));
-app.set('xml', path.join(__dirname, 'modules'));
+app.set('config', path.join(__dirname, 'config'));
+app.set('helpers', path.join(__dirname, 'helpers'));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,40 +34,59 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * william added for extension.
- * app.use('/data', express.static(config.root + '/data'));
+ * app.use('/data', express.static(config.root + '/modules'));
  */
-app.use('/', routes);
-app.use('/webmd', webmd);
+app.use('/', routes); //index.xml
+app.use('/v1', webmd);   //v1.xml
+app.use('/webmd', webmd); //webmd.ejs
+
+/**
+ * require('./routes/react')(app) for react routers:
+ * /comments,  /api/react/comments
+ */
+react(app);
+
+app.use(cors());
+//localhost:3000/api/newsletter/perf
+app.use('/api/newsletter', newsletter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
-
-// error handlers
 
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
+app.use('*', function (req, res) {
+  var sent = {
+    query: req.query,
+    params: req.params,
+    body: req.body
+  };
+  res.status(200).json(sent);
 });
 
 module.exports = app;

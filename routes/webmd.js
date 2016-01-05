@@ -16,52 +16,73 @@ var CONSTANTS = require(dir + 'config/constants');
 /* locally: modules/  */
 var home = CONSTANTS.wxml.home;
 
-var defaults = CONSTANTS.webmd.defaults;
+var webmdCtrl = new WebMD();
 
-var webmdCtrl = new WebMD.WebMDCtrl(defaults);
-
-var facadeCtrl = new Facade.FacadeCtrl(defaults);
-
-/**
- * and extend settings: 1 from root-constructor, 1 from itself.
- */
-webmdCtrl.extend(WebMD.options);
+var facadeCtrl = new Facade();
 
 router.get('/', function (req, res, next) {
 
-    var doc = fs.readFileSync(home, 'utf8');
+  var doc = fs.readFileSync(home, 'utf8');
 
-    var objs = parser.toJson(doc, {object: true});
+  var objs = parser.toJson(doc, {object: true});
 
-    var panes = webmdCtrl.webmd_page(objs);
+  var panes = webmdCtrl.webmd_page(objs);
 
-    var available_modules = [], json_objects = {};
+  var available_modules = [], json_objects = {};
 
-    if (Array.isArray(panes)) {
-        available_modules = webmdCtrl.get_available_modules(panes);
-    }
+  /**
+   * find all <pane>s, search:
+   * 1. <module /> exists?
+   * 2. if <module/> exists: collect its property: class, path
+   */
+  if (Array.isArray(panes)) {
+    available_modules = webmdCtrl.get_available_modules(panes);
+  }
 
-    json_objects = facadeCtrl.process_modules(available_modules);
+  json_objects = facadeCtrl.process_modules(available_modules);
 
-    console.log('BEFORE RENDERING:', json_objects);
-    //console.log(available_modules);
+  console.log('(1) Avalibale Modules:', available_modules);
+  console.log('(2) Before Rendering - json_objects:', json_objects);
 
-    var ejs_html = webmdCtrl.setup_views_1(json_objects);
+  //var css = facadeCtrl.dynamic_update_template(ejs_html);
 
-    var contentPane = _.keys(json_objects).join('');
 
-    //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
-    //1. res.render('webmd', json_objects);
-    //2. res.status(200).send(html);
+  var snippets = facadeCtrl.setup_view(json_objects);
+  console.log('(3) Rendered contentPanes:', snippets);
 
-    res.render('webmd', {title: 'WebMD: Better information. Better health.'}, function (err, html) {
+  res.render('webmd', {title: CONSTANTS.xmlXsl.title}, function (err, html) {
 
-        var $ = cheerio.load(html);
+    var $ = cheerio.load(html);
 
-        $('#' + contentPane).append(ejs_html);
-
-        res.send($.html());
+    _.forEach(snippets, function (htmlObj) {
+      $('#' + htmlObj.contentPane).append(htmlObj.html);
     });
+
+    res.send($.html());
+  });
 });
+
+/**
+ * for legacy and individual development and debug
+ */
+var linklist = require('./v1/linklist');
+var editorial = require('./v1/editorial');
+var editorial1 = require('./v1/editorial1');
+var editorial2 = require('./v1/editorial2');
+
+router.get('/linklist', linklist.get_local_linklist);
+router.get('/linklist_remote', linklist.get_remote_linklist);
+
+router.get('/editorial1', editorial1.get_local_editorial);
+router.get('/editorial1_remote', editorial1.get_remote_editorial);
+
+router.get('/editorial2', editorial2.get_local_editorial);
+router.get('/editorial2_remote', editorial2.get_remote_editorial);
+
+
+router.get('/xsl', require('./v1/xsl'));
+router.get('/all3', require('./v1/xsl'));
+
+router.get('/editorial/:xmlId', editorial.getXml);
 
 module.exports = router;
