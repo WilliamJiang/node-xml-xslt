@@ -30,28 +30,33 @@ router.get('/', function (req, res, next) {
 
   var available_modules = [], json_objects = {};
 
+  /**
+   * find all <pane>s, search:
+   * 1. <module /> exists?
+   * 2. if <module/> exists: collect its property: class, path
+   */
   if (Array.isArray(panes)) {
     available_modules = webmdCtrl.get_available_modules(panes);
   }
 
   json_objects = facadeCtrl.process_modules(available_modules);
 
+  console.log('Avalibale Modules:', available_modules);
   console.log('BEFORE RENDERING:', json_objects);
-  //console.log(available_modules);
 
-  var ejs_html = webmdCtrl.setup_views_1(json_objects);
+  var snippets = facadeCtrl.setup_view(json_objects);
 
-  var contentPane = _.keys(json_objects).join('');
-
-  //var html = webmdCtrl.dynamic_update_template(contentPane, ejs_html);
-  //1. res.render('webmd', json_objects);
-  //2. res.status(200).send(html);
-
-  res.render('webmd', function (err, html) {
+  res.render('webmd', {
+    title: CONSTANTS.xmlXsl.title
+  }, function (err, html) {
 
     var $ = cheerio.load(html);
 
-    $('#' + contentPane).append(ejs_html);
+    //var css = facadeCtrl.dynamic_update_template(contentPane, ejs_html);
+
+    _.forEach(snippets, function (htmlObj) {
+      $('#' + htmlObj.contentPane).append(htmlObj.html);
+    });
 
     res.send($.html());
   });

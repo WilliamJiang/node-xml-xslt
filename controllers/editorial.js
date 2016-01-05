@@ -137,14 +137,10 @@ Editorial.prototype.content = function () {
 };
 
 Editorial.prototype.module_settings = function () {
-  return this.content().wbmd_asset.webmd_module.module_settings;
+  return xml_obj.webmd_rendition.content.wbmd_asset.webmd_module.module_settings;
 };
 
 Editorial.prototype.friendlyurls = function () {
-  return;
-};
-
-Editorial.prototype.referenced_objects = function () {
   return;
 };
 
@@ -205,7 +201,7 @@ Editorial.prototype.assembly = function () {
       authorRow: this.authorRow()
     },
   }
-}
+};
 
 Editorial.prototype.get_url_by_cid = function (chronic_id, ref_objs) {
   var url = '';
@@ -221,12 +217,71 @@ Editorial.prototype.get_url_by_cid = function (chronic_id, ref_objs) {
   return CONSTANTS.wxml.url + url;
 };
 
+
+Editorial.prototype.get_links = function () {
+  var links = null;
+  try {
+    links =
+      this.xml_objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
+  }
+  catch (e) {
+  }
+
+  return links;
+};
+
+Editorial.prototype.get_description = function () {
+  var descriptions = null;
+  try {
+    descriptions =
+      this.xml_objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.descriptions.description;
+  }
+  catch (e) {
+  }
+  return descriptions;
+};
+
+Editorial.prototype.get_referenced_objects = function () {
+  var ref_objs = null;
+  try {
+    ref_objs =
+      this.xml_objs.webmd_rendition.referenced_objects.object;
+  }
+  catch (e) {
+  }
+  return ref_objs;
+};
+
+
+Editorial.prototype.get_ejs_file = function () {
+  var ejs_file = '';
+  try {
+    ejs_file = this.xml_objs.webmd_rendition.content.wbmd_asset.webmd_module.module_settings.wbmd_pb_module_xsl.path;
+  }
+  catch (e) {
+  }
+  return ejs_file;
+};
+
+Editorial.prototype.process_module = function (xml_file) {
+
+  var doc = fs.readFileSync(xml_file, 'utf8');
+
+  this.xml_objs = parser.toJson(doc, {object: true});
+
+  return this.xml_objs;
+};
+
+
 Editorial.prototype.assembly_links = function (links, ref_objs) {
 
   var editorial;
   var self = this;
 
-  //console.log('assembly_links: ', links);
+
+  var links = this.get_links();
+  var descriptions = this.get_description();
+  var ref_objs = this.get_referenced_objects();
 
   // links is array in editorial1, or object in ediorial2
   if (Array.isArray(links)) {
@@ -286,44 +341,9 @@ Editorial.prototype.assembly_links = function (links, ref_objs) {
         text: 'author_text'
       }
     };
-
   }
 
   return editorial;
 };
-
-Editorial.prototype.process_module = function (xml_file) {
-
-  var doc = fs.readFileSync(xml_file, 'utf8');
-
-  var objs = parser.toJson(doc, {object: true});
-
-  this.xml_objs = objs;
-
-  var links = null, descriptions = null;
-  try {
-    links =
-      objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
-
-    descriptions =
-      objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.descriptions.description;
-  }
-  catch (e) {
-  }
-
-  var ref_objs = null;
-  try {
-    ref_objs =
-      objs.webmd_rendition.referenced_objects.object;
-  }
-  catch (e) {
-  }
-
-  //console.log('process_module links: ', links);
-  //console.log('ref_objs', ref_objs);
-
-  return this.assembly_links(links, ref_objs);
-};
-
 
 module.exports = Editorial;

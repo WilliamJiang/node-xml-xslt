@@ -54,7 +54,7 @@ WebMD.prototype.get_available_modules_1 = function (panes) {
     });
   }
   return available_modules;
-}
+};
 
 
 WebMD.prototype.get_available_modules = function (panes) {
@@ -97,7 +97,8 @@ WebMD.prototype.get_available_modules = function (panes) {
   return available_modules;
 };
 
-/** Deprecated:
+/**
+ * Deprecated:
  * this function needs help of jQuery.ready():
  * add <%- include .ejs -%> at bottom of index.ejs.
  */
@@ -119,6 +120,11 @@ WebMD.prototype.setup_views = function (json_objects) {
   return ejs_objects;
 };
 
+/**
+ * Deprecated:
+ * modules/editorial1.xml update to: <wbmd_pb_module_xsl path="editorial1.ejs".../>
+ * so no need to manually determine the ejs template.
+ */
 WebMD.prototype.setup_views_1 = function (json_objects) {
   var html = '', templateString = '';
 
@@ -150,25 +156,6 @@ WebMD.prototype.setup_views_1 = function (json_objects) {
     }
   });
   return html;
-};
-
-/**
- * dynamic update HTML-template, then ejs to inject JSON-data.
- */
-WebMD.prototype.dynamic_update_template = function (ContentPane, snippet) {
-
-  var templateFile = CONSTANTS.wxml.ejs + '../webmd.ejs';
-
-  var $ = cheerio.load(fs.readFileSync(templateFile, 'utf8'));
-
-  $('#' + ContentPane).append(snippet);
-
-  var css = '';
-  var css_file = 'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Flexible_Layout_CSS/Runtime/2_column_layout_harmony22.css';
-  css += '<link rel="stylesheet" href="' + css_file + '"/>';
-  $('header').append(css);
-
-  return $.html();
 };
 
 module.exports = WebMD;

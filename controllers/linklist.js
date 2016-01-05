@@ -89,7 +89,7 @@ function LinkList(settings) {
   _.assign(options, global_opts, local_opts, settings);
   XSD.call(this, options);
 
-  this.property = {};
+  this.xml_objs = {};
 }
 
 LinkList.prototype = Object.create(XSD.prototype);
@@ -97,6 +97,38 @@ LinkList.prototype = Object.create(XSD.prototype);
 LinkList.prototype.constructor = LinkList;
 
 LinkList.prototype.get_url_href = function () {
+};
+
+LinkList.prototype.get_links = function () {
+  var links = null;
+  try {
+    links =
+      this.xml_objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
+  }
+  catch (e) {
+  }
+  return links;
+};
+
+LinkList.prototype.get_referenced_objects = function () {
+  var ref_objs = null;
+  try {
+    ref_objs =
+      this.xml_objs.webmd_rendition.referenced_objects.object;
+  }
+  catch (e) {
+  }
+  return ref_objs;
+};
+
+LinkList.prototype.get_ejs_file = function () {
+  var ejs_file = '';
+  try {
+    ejs_file = this.xml_objs.webmd_rendition.content.wbmd_asset.webmd_module.module_settings.wbmd_pb_module_xsl.path;
+  }
+  catch (e) {
+  }
+  return ejs_file;
 };
 
 /**
@@ -116,12 +148,24 @@ LinkList.prototype.get_url_by_cid = function (chronic_id, ref_objs) {
   return CONSTANTS.wxml.url + url;
 };
 
-LinkList.prototype.assembly_links = function (links, ref_objs) {
+LinkList.prototype.process_module = function (xml_file) {
+
+  var doc = fs.readFileSync(xml_file, 'utf8');
+
+  this.xml_objs = parser.toJson(doc, {object: true});
+
+  return this.xml_objs;
+};
+
+LinkList.prototype.assembly_links = function () {
+
   var self = this;
   var link_ary = [];
-  links.forEach(function (link) {
 
-    //console.log(typeof link, link.link_link.chronic_id);
+  var links = this.get_links();
+  var ref_objs = this.get_referenced_objects();
+
+  links.forEach(function (link) {
 
     var url = self.get_url_by_cid(link.link_link.chronic_id, ref_objs);
 
@@ -131,31 +175,6 @@ LinkList.prototype.assembly_links = function (links, ref_objs) {
     });
   });
   return link_ary;
-};
-
-LinkList.prototype.process_module = function (xml_file) {
-
-  var doc = fs.readFileSync(xml_file, 'utf8');
-
-  var objs = parser.toJson(doc, {object: true});
-
-  var links = null;
-  try {
-    links =
-      objs.webmd_rendition.content.wbmd_asset.webmd_module.module_data.links.link;
-  }
-  catch (e) {
-  }
-
-  var ref_objs = null;
-  try {
-    ref_objs =
-      objs.webmd_rendition.referenced_objects.object;
-  }
-  catch (e) {
-  }
-
-  return this.assembly_links(links, ref_objs);
 };
 
 
