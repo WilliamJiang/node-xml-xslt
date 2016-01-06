@@ -52,8 +52,18 @@ var css_ary = [
   'http://css.webmd.com/dtmcms/live/webmd/PageBuilder_Assets/CSS/Template/Brandcast Harmony Template_091e9c5e8100429f26.css'
 ];
 
+var module_Class = {
+  'AdModule': 'AdModule',
+  'GetModule': 'GetModule',
+  'HTML': 'HtmlModule',
+  'EditorialModule': 'Editorial',
+  'LinkListModule': 'Linklist'
+};
+
+
 module.exports = {
   wxml: wxml,
   xmlXsl: xmlXsl,
-  cssFiles: css_ary
+  cssFiles: css_ary,
+  moduleClass: module_Class
 };

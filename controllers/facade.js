@@ -20,7 +20,53 @@ Facade.prototype = Object.create(XSD.prototype);
 
 Facade.prototype.constructor = Facade;
 
+
+Facade.prototype.delegator = function (mClass, mPath) {
+
+  var controller = CONSTANTS.moduleClass[mClass];
+
+  /**
+   * TODO: should be singleton pattern.
+   */
+  var ctrl = new (eval(controller))();
+
+  ctrl.process_module(folder + mPath);
+
+  var content = ctrl.assembly_links();
+
+  var ejs_file = ctrl.get_ejs_file();
+
+  var module = {content: {}};
+  module.ejs = ejs_file;
+  module.content[controller.toLowerCase()] = content;
+
+  return module;
+};
+
 Facade.prototype.process_modules = function (modules) {
+
+  var jsons = {};
+  var self = this;
+
+  _.forEach(modules, function (module_ary, ContentPane) {
+
+    if (!jsons[ContentPane]) {
+      jsons[ContentPane] = [];
+    }
+
+    _.forEach(module_ary, function (m, key) {
+
+      var module = self.delegator(m.class, m.path);
+
+      jsons[ContentPane].push(module);
+    });
+
+  });
+
+  return jsons;
+};
+
+Facade.prototype.process_modules1 = function (modules) {
 
   var jsons = {};
 
