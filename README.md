@@ -1,11 +1,15 @@
 ## Quick start
 
 ```sh
-// get the repository
+// (1) get the repository
 $ cd node-runtime/
 $ npm install
 $ bower install
 
+
+// (2) Then:
+$ grunt
+//or:
 $ npm start
 //or:
 $ node bin/www
